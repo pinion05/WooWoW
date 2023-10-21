@@ -1,12 +1,45 @@
 "use client";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 import LevelStep from "./LevelStep.client";
+import Character from "@/model/Characer";
+
+interface ProfileAreaProps {}
 
 export default function ProfileArea(): JSX.Element {
+  const [originUserInfoArrayVal, setOriginUserInfoArrayVal] = useState<
+    Character[]
+  >([
+    {
+      playerName: "우왁굳",
+      characterName: "줄건줘",
+    },
+    {
+      playerName: "천양",
+      characterName: "응안줘",
+    },
+    {
+      playerName: "비챤",
+      characterName: "뽀짝쿵야",
+    },
+    {
+      playerName: "징버거",
+      characterName: "부가땅",
+    },
+    {
+      playerName: "와저씨",
+      characterName: "솔뿌엉이",
+    },
+
+    {
+      playerName: "릴파",
+      characterName: "황제팬치육호기",
+    },
+  ]);
   //
+  const searchRef = useRef(null);
 
   function groupByConsecutiveNumbers(
     characterInfoArray: WoWCharacterProfile[]
@@ -35,33 +68,6 @@ export default function ProfileArea(): JSX.Element {
 
   const [userInfos, setUserInfos] = useState<Array<WoWCharacterProfile>>();
   //
-  const originUserInfoArrayVal = [
-    {
-      playerName: "우왁굳",
-      characterName: "줄건줘",
-    },
-    {
-      playerName: "천양",
-      characterName: "응안줘",
-    },
-    {
-      playerName: "비챤",
-      characterName: "뽀짝쿵야",
-    },
-    {
-      playerName: "징버거",
-      characterName: "부가땅",
-    },
-    {
-      playerName: "와저씨",
-      characterName: "솔뿌엉이",
-    },
-
-    {
-      playerName: "릴파",
-      characterName: "황제팬치육호기",
-    },
-  ];
 
   let mounted = false;
 
@@ -106,6 +112,9 @@ export default function ProfileArea(): JSX.Element {
       const response = await axios.get(
         `http://localhost:5000/search?charactername=${characterName}`
       );
+      if (response.status === 500) {
+        return;
+      }
       return response.data;
     } catch (error) {
       console.error(error);
@@ -117,8 +126,36 @@ export default function ProfileArea(): JSX.Element {
   //   console.log(groupByConsecutiveNumbers(userInfos));
   // }
 
+  function submit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log(searchRef.current.value);
+
+    if (e.currentTarget) {
+      setOriginUserInfoArrayVal((pre) => [
+        ...pre,
+        {
+          playerName: "",
+          characterName: searchRef.current.value,
+        },
+      ]);
+    }
+  }
+
+  useEffect(() => {
+    console.log(originUserInfoArrayVal);
+    fetchCharacters().then((data) => console.log(data));
+  }, [originUserInfoArrayVal]);
+
   return (
     <>
+      <form onSubmit={submit}>
+        <input
+          ref={searchRef}
+          type="text"
+          placeholder="캐릭터 이름을 검색하세요"
+          className="p-[5px] rounded-md"
+        />
+      </form>
       {userInfos &&
         groupByConsecutiveNumbers(userInfos).map((ele, idx) => (
           <>

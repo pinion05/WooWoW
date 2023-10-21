@@ -234,11 +234,11 @@ export default function Modal({
             </div>
             <div
               id="캐릭터스텟"
-              className="w-[100%] h-[auto] mt-[10px] bg-slate-600 rounded-lg outline-gray-500 flex"
+              className="w-[100%] h-[auto] mt-[10px]  rounded-lg outline-gray-500 flex justify-evenly"
             >
               <div
                 id="캐릭터 코어스텟"
-                className="w-[110px] h-[auto] bg-stone-950 flex flex-col justify-start ring-zinc-400 ring-2 rounded-lg p-[5px]"
+                className="w-[40%] h-[auto] bg-stone-950 flex flex-col justify-start ring-zinc-400 ring-2 rounded-lg p-[2px] mr-1"
               >
                 {""}
                 {[
@@ -265,7 +265,7 @@ export default function Modal({
 
               <div
                 id="캐릭터 코어스텟"
-                className="w-[150px] h-[auto] bg-stone-950 flex flex-col justify-start ring-zinc-400 ring-2 rounded-lg p-[5px] mr-[15px]"
+                className="w-[50%] h-[auto] bg-stone-950 flex flex-col justify-start ring-zinc-400 ring-2 rounded-lg p-[2px]"
               >
                 {""}
                 {[
@@ -290,10 +290,11 @@ export default function Modal({
                   },
                   {
                     name: "데미지감소",
-                    effective: Math.round(
-                      statistics?.armor.effective /
-                        (statistics?.armor.effective + 85 * info.level + 400)
-                    ),
+                    effective: `${Math.round(
+                      (statistics?.armor.effective /
+                        (statistics?.armor.effective + 85 * info.level + 400)) *
+                        100
+                    )}%`,
                   },
                 ].map((stat) => {
                   return (
