@@ -49,7 +49,7 @@ export default function Modal({
   }
 
   function clickCloseButton() {
-    console.log("닫기버튼 클릭됨");
+    // console.log("닫기버튼 클릭됨");
     if (closeFunction) {
       closeFunction();
     }
