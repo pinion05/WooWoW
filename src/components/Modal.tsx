@@ -64,7 +64,7 @@ export default function Modal({
         )}`
       );
       setEquippedItems(response.data.equipped_items);
-      console.log(response.data.equipped_items);
+      // console.log(response.data.equipped_items);
     } catch (error) {
       console.log(error);
     }

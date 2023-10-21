@@ -73,20 +73,45 @@ export default function ProfileArea(): JSX.Element {
 
   const fetchCharacters = async () => {
     try {
-      const promises = originUserInfoArrayVal.map((user) =>
-        charaterAPI(user.characterName)
+      //* promise[] 를 반환함
+      const promises: Promise<WoWCharacterProfile>[] =
+        originUserInfoArrayVal.map((user) => charaterAPI(user.characterName));
+      console.log(
+        "🚀 ~ file: ProfileArea.tsx:79 ~ fetchCharacters ~ promises:",
+        promises
       );
-      const dataArray: WoWCharacterProfile[] = await Promise.all(promises);
+      try {
+        const dataArray = (await Promise.allSettled(promises)).filter(
+          (result) => result.status === "fulfilled"
+        );
 
-      dataArray.sort((a: WoWCharacterProfile, b: WoWCharacterProfile) => {
-        if (!b.level || !a.level) {
-          throw new Error("level is undefined");
-        }
-        return b.level - a.level;
-      });
+        console.log(
+          "🚀 ~ file: ProfileArea.tsx:85 ~ fetchCharacters ~ dataArray:",
+          dataArray
+        );
 
-      setUserInfos(dataArray);
-      return dataArray;
+        const suitableArray = dataArray.map((data) => data.value);
+        console.log(
+          "🚀 ~ file: ProfileArea.tsx:96 ~ fetchCharacters ~ suitableArray:",
+          suitableArray
+        );
+
+
+        suitableArray.sort((a: WoWCharacterProfile, b: WoWCharacterProfile) => {
+          if (!b.level || !a.level) {
+            throw new Error("level is undefined");
+          }
+          return b.level - a.level;
+        });
+  
+        setUserInfos(suitableArray);
+        return dataArray;
+
+        // const resolveArray = dataArray.map((promise)=>promise.status)
+      } catch (error) {
+        console.log(error);
+      }
+      // prettier-ignore
     } catch (error) {
       console.error(error);
     }

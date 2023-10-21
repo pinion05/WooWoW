@@ -22,7 +22,7 @@ export default function IconComponent({
   useEffect(() => {
     console.log("아이템컴포 마운트");
     if (item?.media?.id) {
-      console.log("아이템아이디 존재");
+      // console.log("아이템아이디 존재");
       featchImg(item.media.id);
     } else {
       console.log("미디어 존재하지않음");
