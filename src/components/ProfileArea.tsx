@@ -82,14 +82,16 @@ export default function ProfileArea(): JSX.Element {
     try {
       // prettier-ignore
       //* promise[] 를 반환함
-      const promises: Promise<WoWCharacterProfile>[] = originUserInfoArrayVal.map((user) => charaterAPI(user.characterName));
+      const promises: Promise<WoWCharacterProfile | undefined>[] = originUserInfoArrayVal.map((user) => charaterAPI(user.characterName));
 
       try {
         // prettier-ignore
-        const dataArray = (await Promise.allSettled(promises)).filter((result) => result.status === "fulfilled");
-        const suitableArray = dataArray.map((data) => data.value);
+        const dataArray = (await Promise.allSettled(promises)).filter((result) => result.status === "fulfilled" && result.value !== undefined);
+        const suitableArray = dataArray.map(
+          (data: PromiseSettledResult<any>) => data.value
+        );
         suitableArray.sort((a: WoWCharacterProfile, b: WoWCharacterProfile) => {
-          if (!b.level || !a.level) {
+          if (!b.level || !a.level || !a || !b) {
             throw new Error("level is undefined");
           }
           return b.level - a.level;
@@ -112,7 +114,7 @@ export default function ProfileArea(): JSX.Element {
         `http://localhost:5000/search?charactername=${encodedCharacterName}`
       );
       if (response.status === 500) {
-        return;
+        throw new Error("Server responded with status code 500");
       }
       return response.data;
     } catch (error) {
@@ -120,14 +122,12 @@ export default function ProfileArea(): JSX.Element {
       console.log(`캐릭터 검색중 badresponse`);
       alert(` ${characterName} 이름이 존재하지 않습니다.`);
       //* 캐릭터 검색 실패시 캐릭터 배열에서 삭제 => useEffect[OriginUserInfoArrayVal]실행
-      setOriginUserInfoArrayVal(originUserInfoArrayVal.slice(0, -1));
+      setOriginUserInfoArrayVal((prev) =>
+        prev.filter((user) => user.characterName !== characterName)
+      );
       throw error; // or handle the error appropriately
     }
   }
-
-  // if (userInfos) {
-  //   console.log(groupByConsecutiveNumbers(userInfos));
-  // }
 
   function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -145,11 +145,19 @@ export default function ProfileArea(): JSX.Element {
   }
 
   useEffect(() => {
-    fetchCharacters().then((data) => {
-      console.log("🚀 ~ file: ProfileArea.tsx:160 ~ useEffect ~ data:", data);
-      return;
-    });
+    console.log(
+      "🚀 ~ file: ProfileArea.tsx:152 ~ ProfileArea ~ originUserInfoArrayVal:",
+      originUserInfoArrayVal
+    );
+    fetchCharacters();
   }, [originUserInfoArrayVal]);
+
+  useEffect(() => {
+    console.log(
+      "🚀 ~ file: ProfileArea.tsx:156 ~ ProfileArea ~ useState ~ userInfos:",
+      userInfos
+    );
+  }, [userInfos]);
 
   return (
     <>

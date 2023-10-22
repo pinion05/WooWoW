@@ -20,7 +20,7 @@ export default function IconComponent({
   const containerRef = useRef<any>();
 
   useEffect(() => {
-    console.log("아이템컴포 마운트");
+    // console.log("아이템컴포 마운트");
     if (item?.media?.id) {
       // console.log("아이템아이디 존재");
       featchImg(item.media.id);
@@ -165,12 +165,13 @@ const TooltipContainer = styled.div<ContainerProps>`
   position: relative;
   width: 300px;
   height: auto;
-  background-color: #252525;
+  background-color: #080d21;
   left: 60px;
   top: -120px;
   outline: 2px solid ${(props) => q_color(props.quality)};
   border-radius: 5px;
   flex-flow: column;
+  padding: 5px;
 `;
 
 function q_color(quality: string | undefined) {
@@ -182,10 +183,10 @@ function q_color(quality: string | undefined) {
       return "#00ff00";
       break;
     case "희귀":
-      return "blue";
+      return "#0070dd";
       break;
     case "영웅":
-      return "purple";
+      return "#9535e1";
       break;
     default:
       return "gray";

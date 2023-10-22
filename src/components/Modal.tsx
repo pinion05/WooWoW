@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 import { CharacterProps } from "./Profile";
 import axios from "axios";
 import Item from "@/model/Item";
-import e from "express";
 import IconComponent from "./ItemComponent";
 import CharacterStatistics from "@/model/Statistics";
 
@@ -36,15 +35,21 @@ export default function Modal({
   const [rangedWeapon, setRangedWeapon] = useState<Item>();
   const [out, setOut] = useState<Item>();
 
+  let mount = false;
+
   useEffect(() => {
+    if (mount) {
+      return;
+    }
     console.log(info.name + "마운트됨");
     featchEquipment(info.name);
     clickContainer();
     featchStatistics(info.name);
+    mount = true;
   }, []);
 
   function clickContainer() {
-    console.log("컨테이너 클릭됨");
+    // console.log("컨테이너 클릭됨");
     modalRef.current?.showModal();
   }
 
@@ -71,7 +76,10 @@ export default function Modal({
   }
 
   useEffect(() => {
-    console.log(equippedItems);
+    console.log(
+      "🚀 ~ file: Modal.tsx:81 ~ useEffect ~ equippedItems:",
+      equippedItems
+    );
     equippedItems?.forEach(
       (item: Item) => {
         switch (item.slot.name) {

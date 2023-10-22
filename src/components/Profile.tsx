@@ -21,7 +21,7 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
   function classIcon(className: string) {
     switch (className) {
       case "도적":
-        return "https://i.namu.wiki/i/8Uvmcr2FAPyGoA_61zzO5VaAntOi_Rz2lUB1QU3xjq3bplgWOVNYXSKWgHba1eZz2WyXng3wIESlK1gE0qMjlA.webp";
+        return "https://i.namu.wiki/i/3x7NmZBXPobH-QQxtqGX3B09kndMYIid0yP3zLWykfiM9KEIfhfJBRlt0Eno-amT9oaljBB7zh6F4ArGZ4mIYw.webp";
       case "마법사":
         return "https://i.namu.wiki/i/-P6SC-CX-q4HHhWut_mgrgoPcDgE-IWPGlS67PH5KYM-8_Tg4_dKMvnBEL9Clgj6ZmKzocWEKYhMokf96AgDmw.webp";
       case "성기사":
