@@ -5,6 +5,8 @@ import axios from "axios";
 import Item from "@/model/Item";
 import IconComponent from "./ItemComponent";
 import CharacterStatistics from "@/model/Statistics";
+import wowHardcoreLogo from "../img/WOW_Classic_Hardcore_Logo_enUS.png";
+import Image from "next/image";
 
 export default function Modal({
   info,
@@ -244,6 +246,9 @@ export default function Modal({
               id="캐릭터렌더링"
               className="w-[100%] h-[51%] bg-neutral-900 ring-gray-500 ring-[2px] rounded-lg flex justify-end"
             >
+              <p className="text-gray-50 absolute left-[100px] text-4xl top-[160px]">
+                WOOWOW
+              </p>
               <div className="flex flex-col">
                 <div className="w-[30px] h-[30px] rounded-sm bg-gray-400 m-[3px] ring-[2px] ring-gray-500">
                   <p className="text-white">
