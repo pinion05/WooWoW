@@ -184,8 +184,9 @@ export default function Modal({
     {
       name: "데미지감소",
       effective: `${Math.round(
-        (statistics?.armor.effective ??
-          0 / (statistics?.armor.effective ?? 0 + 85 * info.level + 400)) * 100
+        ((statistics?.armor.effective ?? 0) /
+          ((statistics?.armor.effective ?? 0) + 85 * info.level + 400)) *
+          100
       )}%`,
     },
   ];
