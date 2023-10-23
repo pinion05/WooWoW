@@ -172,6 +172,7 @@ const TooltipContainer = styled.div<ContainerProps>`
   border-radius: 5px;
   flex-flow: column;
   padding: 5px;
+  z-index: 100;
 `;
 
 function q_color(quality: string | undefined) {
