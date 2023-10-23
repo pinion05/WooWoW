@@ -86,9 +86,10 @@ export default function ProfileArea(): JSX.Element {
 
       try {
         // prettier-ignore
-        const dataArray = (await Promise.allSettled(promises)).filter((result) => result.status === "fulfilled" && result.value !== undefined);
+        const dataArray = (await Promise.allSettled(promises))
+        .filter((result): result is PromiseFulfilledResult<any>  => result.status === "fulfilled" && result.value !== undefined);
         const suitableArray = dataArray.map(
-          (data: PromiseSettledResult<any>) => data.value
+          (data: PromiseFulfilledResult<any>) => data.value
         );
         suitableArray.sort((a: WoWCharacterProfile, b: WoWCharacterProfile) => {
           if (!b.level || !a.level || !a || !b) {
@@ -133,6 +134,10 @@ export default function ProfileArea(): JSX.Element {
     e.preventDefault();
     if (e.currentTarget) {
       setOriginUserInfoArrayVal((pre) => {
+        if (!searchRef.current?.value) {
+          alert("캐릭터이름을 입력하세요");
+          return pre;
+        }
         // prettier-ignore
         //* 캐릭터 이름을 캐릭터 이름 배열에 마지막에 추가함  -> setState를 통해서 리랜더링과 fetchCharacters 호출
         return [...pre,
