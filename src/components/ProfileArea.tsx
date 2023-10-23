@@ -28,27 +28,27 @@ export default function ProfileArea(): JSX.Element {
       playerName: "우왁굳",
       characterName: "줄건줘",
     },
-    {
-      playerName: "천양",
-      characterName: "응안줘",
-    },
-    {
-      playerName: "비챤",
-      characterName: "뽀짝쿵야",
-    },
-    {
-      playerName: "징버거",
-      characterName: "부가땅",
-    },
-    {
-      playerName: "와저씨",
-      characterName: "솔뿌엉이",
-    },
+    // {
+    //   playerName: "천양",
+    //   characterName: "응안줘",
+    // },
+    // {
+    //   playerName: "비챤",
+    //   characterName: "뽀짝쿵야",
+    // },
+    // {
+    //   playerName: "징버거",
+    //   characterName: "부가땅",
+    // },
+    // {
+    //   playerName: "와저씨",
+    //   characterName: "솔뿌엉이",
+    // },
 
-    {
-      playerName: "릴파",
-      characterName: "황제팬치육호기",
-    },
+    // {
+    //   playerName: "릴파",
+    //   characterName: "황제팬치육호기",
+    // },
   ]);
   //
   const searchRef = useRef<HTMLInputElement>(null);
@@ -111,7 +111,7 @@ export default function ProfileArea(): JSX.Element {
     try {
       const encodedCharacterName = encodeURIComponent(characterName);
       const response = await axios.get(
-        `http://localhost:5000/search?charactername=${encodedCharacterName}`
+        `/api/search?charactername=${encodedCharacterName}`
       );
       if (response.status === 500) {
         throw new Error("Server responded with status code 500");
@@ -173,7 +173,7 @@ export default function ProfileArea(): JSX.Element {
         groupByConsecutiveNumbers(userInfos).map((ele, idx) => (
           <>
             <LevelStep
-              playerName={originUserInfoArrayVal[idx].playerName}
+              // playerName={originUserInfoArrayVal[idx].playerName}
               userInfoArray={ele}
             ></LevelStep>
           </>

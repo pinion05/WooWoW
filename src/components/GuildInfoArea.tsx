@@ -18,7 +18,7 @@ export default function GuildInfoArea(): JSX.Element {
 
   async function featchGuildInfo() {
     try {
-      const guildInfo = await axios.get(`http://localhost:5000/guild`);
+      const guildInfo = await axios.get(`api/guild`);
       console.log(guildInfo);
       setGuildmemberCount(guildInfo.data);
     } catch (error) {}

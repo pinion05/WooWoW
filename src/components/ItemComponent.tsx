@@ -31,7 +31,7 @@ export default function IconComponent({
 
   async function featchImg(mediaid: number) {
     try {
-      const response = await axios.get("http://localhost:5000/media", {
+      const response = await axios.get("/api/media", {
         params: { mediaid: mediaid.toString() },
       });
       setItemUrl(response.data);

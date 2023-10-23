@@ -64,9 +64,7 @@ export default function Modal({
     console.log("요청시도");
     try {
       const response = await axios.get(
-        `http://localhost:5000/equipment?charactername=${encodeURIComponent(
-          chracterName
-        )}`
+        `/api/equipment?charactername=${encodeURIComponent(chracterName)}`
       );
       setEquippedItems(response.data.equipped_items);
       // console.log(response.data.equipped_items);
@@ -148,7 +146,7 @@ export default function Modal({
 
   async function featchStatistics(characterName: string) {
     try {
-      const response = await axios.get("http://www.localhost:5000/statistics", {
+      const response = await axios.get("/api/statistics", {
         params: {
           charactername: characterName,
         },

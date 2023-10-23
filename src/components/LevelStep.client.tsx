@@ -5,7 +5,7 @@ import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 
 interface LevelStepProps {
   userInfoArray: WoWCharacterProfile[];
-  playerName: string;
+  playerName?: string;
 }
 
 export default function LevelStep({
