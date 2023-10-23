@@ -156,6 +156,40 @@ export default function Modal({
       console.log(error);
     }
   }
+  interface RstatsProps {
+    name: string;
+    effective: string | number | undefined;
+  }
+
+  const rstats: RstatsProps[] = [
+    { name: "전투력", effective: statistics?.attack_power },
+    {
+      name: "공격력",
+      effective: `${Math.round(
+        statistics?.main_hand_damage_min ?? 0
+      )}-${Math.round(statistics?.main_hand_damage_max ?? 0)}`,
+    },
+    {
+      name: "초당공격력",
+      effective: Math.round(statistics?.main_hand_dps ?? 0),
+    },
+    {
+      name: "최대체력",
+      effective: Math.round(statistics?.health ?? 0),
+    },
+    {
+      name: "최대마나",
+      effective: Math.round(statistics?.power ?? 0),
+    },
+    {
+      name: "데미지감소",
+      effective: `${Math.round(
+        (statistics?.armor.effective ??
+          0 / (statistics?.armor.effective ?? 0 + 85 * info.level + 400)) * 100
+      )}%`,
+    },
+  ];
+
   return (
     <dialog
       id="modal"
@@ -274,35 +308,7 @@ export default function Modal({
                 className="w-[50%] h-[auto] bg-stone-950 flex flex-col justify-start ring-zinc-400 ring-2 rounded-lg p-[2px]"
               >
                 {""}
-                {[
-                  { name: "전투력", effective: statistics?.attack_power },
-                  {
-                    name: "공격력",
-                    effective: `${Math.round(
-                      statistics?.main_hand_damage_min
-                    )}-${Math.round(statistics?.main_hand_damage_max)}`,
-                  },
-                  {
-                    name: "초당공격력",
-                    effective: Math.round(statistics?.main_hand_dps),
-                  },
-                  {
-                    name: "최대체력",
-                    effective: Math.round(statistics?.health),
-                  },
-                  {
-                    name: "최대마나",
-                    effective: Math.round(statistics?.power),
-                  },
-                  {
-                    name: "데미지감소",
-                    effective: `${Math.round(
-                      (statistics?.armor.effective /
-                        (statistics?.armor.effective + 85 * info.level + 400)) *
-                        100
-                    )}%`,
-                  },
-                ].map((stat) => {
+                {rstats.map((stat) => {
                   return (
                     <>
                       <div className="flex justify-between m-[0]">
