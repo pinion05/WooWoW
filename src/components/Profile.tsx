@@ -3,6 +3,15 @@
 import { styled } from "styled-components";
 import wak from "../img/wak.jpg";
 import tomb from "../img/coffin.png";
+import bubsa from "../img/magicionIcon.webp";
+import dotgu from "../img/thifeIcon.webp";
+import paladin from "../img/paladinIcon.webp";
+import saje from "../img/priestIcon.webp";
+import blackbubsa from "../img/warlockIcon.webp";
+import hunter from "../img/hunterIcon.webp";
+import druid from "../img/druidIcon.webp";
+import junsa from "../img/knightIcon.webp";
+
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
@@ -21,21 +30,21 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
   function classIcon(className: string) {
     switch (className) {
       case "도적":
-        return "https://i.namu.wiki/i/3x7NmZBXPobH-QQxtqGX3B09kndMYIid0yP3zLWykfiM9KEIfhfJBRlt0Eno-amT9oaljBB7zh6F4ArGZ4mIYw.webp";
+        return dotgu;
       case "마법사":
-        return "https://i.namu.wiki/i/-P6SC-CX-q4HHhWut_mgrgoPcDgE-IWPGlS67PH5KYM-8_Tg4_dKMvnBEL9Clgj6ZmKzocWEKYhMokf96AgDmw.webp";
+        return bubsa;
       case "성기사":
-        return "https://i.namu.wiki/i/xmh6KSENsSX9mzuYB9Ad1ckJ-k4IGzG1nvPhUzetQkHHWZZe_Ita6qs1ioGP9YzuHGOxGVNP9Gj3MA5x-P8Zww.webp";
+        return paladin;
       case "사제":
-        return "https://i.namu.wiki/i/LsfDYjR4EpYG90YX4XmgOWVPgtmETrxvY8zkq1NnL18lLcU4KgcxygY2UOsPvKrIauEjU9_AAlpos5k1rclVPQ.webp";
+        return saje;
       case "흑마법사":
-        return "https://i.namu.wiki/i/_0xzaA9C7dCOhokQ2jzL-BbDNGyf1hfiSVsAh__MHEVYEXXJ1J2ac-og29tj9F2GZfNeNo_3REh0WkVQV5u0LA.webp";
+        return blackbubsa;
       case "사냥꾼":
-        return "https://i.namu.wiki/i/yZfxCQWZA126WW79miKIysB1lToZJMj1c6DoGDfxN2aae77AKJ-lls0HMsCjd3dvIh0WnCc4zfrkfeFZsuoJyw.webp";
+        return hunter;
       case "드루이드":
-        return "https://i.namu.wiki/i/V8BUX1PiHSZi8a--qEHGrhfLerjGEsd9qIsMQY5ioMJNoEpJJHh1uxPfR7ceL7EXJwfsgfEaFg8aEfi4y0-2hw.webp";
+        return druid;
       case "전사":
-        return "https://i.namu.wiki/i/El5j2Pldj3Ctk9xDRSTuVDGpy0hSncwKwbHMd8b1y_BDae96BdEYX9GvqNYxUw68B9qHtOuNjuaP1ATv5_2dHQ.webp";
+        return junsa;
     }
     return "https://i.namu.wiki/i/8Uvmcr2FAPyGoA_61zzO5VaAntOi_Rz2lUB1QU3xjq3bplgWOVNYXSKWgHba1eZz2WyXng3wIESlK1gE0qMjlA.webp";
   }
