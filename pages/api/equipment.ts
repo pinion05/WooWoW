@@ -33,7 +33,7 @@ export default async function handler(
         res.status(500).json("error");
         return;
       }
-      console.log(`${charactername} 호출완료`);
+      // console.log(`${charactername} 호출완료`);
       cache.set(`equimentData_${charactername}`, response.data);
       res.status(200).json(response.data);
       return;
@@ -45,7 +45,7 @@ export default async function handler(
       return;
     }
   } else {
-    console.log(`${charactername}캐시존재`);
+    // console.log(`${charactername}캐시존재`);
     res.status(200).json(cachedCharData);
     return;
   }

@@ -7,6 +7,7 @@ import IconComponent from "./ItemComponent";
 import CharacterStatistics from "@/model/Statistics";
 import wowHardcoreLogo from "../img/WOW_Classic_Hardcore_Logo_enUS.png";
 import Image from "next/image";
+import { Spacing } from "./styledComponents";
 
 export default function Modal({
   info,
@@ -246,7 +247,7 @@ export default function Modal({
               id="캐릭터렌더링"
               className="w-[100%] h-[51%] bg-neutral-900 ring-gray-500 ring-[2px] rounded-lg flex justify-end"
             >
-              <p className="text-gray-50 absolute left-[100px] text-4xl top-[160px] max-sm:w-[100%] max-sm:left-[100px] max-sm:text-xs">
+              <p className="text-gray-50 absolute left-[100px] text-2xl top-[160px] max-sm:w-[100%] max-sm:left-[100px] max-sm:text-xs">
                 WOOWOW_0.1.1
               </p>
               <div className="flex flex-col">
@@ -369,16 +370,6 @@ export default function Modal({
     </dialog>
   );
 }
-
-interface SpacingProps {
-  width?: number;
-  height?: number;
-}
-const Spacing = styled.div<SpacingProps>`
-  display: block;
-  width: ${(props) => `${props.width}px`};
-  height: ${(props) => `${props.height}px`};
-`;
 
 const ItemList = styled.div`
   padding: 5px;

@@ -15,7 +15,6 @@ interface TokenData {
   expiry: number;
 }
 export default async function getToken() {
-  console.log("토큰 요청");
   // prettier-ignore
   let tokenData: TokenData | undefined = tokenCache.get("accessToken");
   if (tokenData === undefined || isTokenExpired(tokenData)) {
@@ -44,15 +43,13 @@ export default async function getToken() {
 
       // 새로운 토큰과 만료 시간 함께 저장
       tokenCache.set("accessToken", tokenData);
-      console.log(response.data.access_token + "캐싱완료");
+      // console.log(response.data.access_token + "캐싱완료");
       return response.data.access_token;
     } catch (error) {
       console.log("🚀 ~ file: getAccessToken.ts:49 ~ getToken ~ error:", error);
       return null;
     }
   } else {
-    console.log(tokenData.value + `캐시존재`);
-
     return tokenData.value;
   }
 }

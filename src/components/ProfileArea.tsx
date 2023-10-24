@@ -5,6 +5,8 @@ import { RefObject, useEffect, useRef, useState } from "react";
 import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 import LevelStep from "./LevelStep.client";
 import Character from "@/model/Characer";
+import { json } from "stream/consumers";
+import { Spacing } from "./styledComponents";
 
 export default function ProfileArea(): JSX.Element {
   let mounted = false;
@@ -28,25 +30,29 @@ export default function ProfileArea(): JSX.Element {
       playerName: "우왁굳",
       characterName: "줄건줘",
     },
-    // {
-    //   playerName: "천양",
-    //   characterName: "응안줘",
-    // },
-    // {
-    //   playerName: "비챤",
-    //   characterName: "뽀짝쿵야",
-    // },
-    // {
-    //   playerName: "징버거",
-    //   characterName: "부가땅",
-    // },
+    {
+      playerName: "천양",
+      characterName: "응안줘",
+    },
+    {
+      playerName: "비챤",
+      characterName: "뽀짝쿵야",
+    },
+    {
+      playerName: "징버거",
+      characterName: "부가땅",
+    },
+    {
+      playerName: "드워프주르르",
+      characterName: "드워프주르르",
+    },
     // {
     //   playerName: "와저씨",
     //   characterName: "솔뿌엉이",
     // },
 
     // {
-    //   playerName: "릴파",
+    //   playerName: "나",
     //   characterName: "황제팬치육호기",
     // },
   ]);
@@ -131,6 +137,8 @@ export default function ProfileArea(): JSX.Element {
   }
 
   function submit(e: React.FormEvent<HTMLFormElement>) {
+    localStorage.setItem("1", "1");
+
     e.preventDefault();
     if (e.currentTarget) {
       setOriginUserInfoArrayVal((pre) => {
@@ -147,6 +155,7 @@ export default function ProfileArea(): JSX.Element {
           }];
       });
     }
+    // localStorage.setItem("1", JSON.stringify(originUserInfoArrayVal));
   }
 
   useEffect(() => {
@@ -174,6 +183,8 @@ export default function ProfileArea(): JSX.Element {
           className="p-[5px] rounded-md shadow-gray-900 shadow-md"
         />
       </form>
+      <Spacing height={20} />
+
       {userInfos &&
         groupByConsecutiveNumbers(userInfos).map((ele, idx) => (
           <>

@@ -30,7 +30,7 @@ export default async function handler(
         res.status(500).json("error");
         return;
       }
-      console.log(`${mediaid}미디어 호출완료`);
+      // console.log(`${mediaid}미디어 호출완료`);
       cache.set(`mediaData_${mediaid}`, response.data.assets[0].value);
       res.status(200).json(response.data.assets[0].value);
       return;
@@ -42,7 +42,7 @@ export default async function handler(
       return;
     }
   } else {
-    console.log(`${mediaid}미디어캐시존재`);
+    // console.log(`${mediaid}미디어캐시존재`);
     res.status(200).json(cachedMediadata);
     return;
   }

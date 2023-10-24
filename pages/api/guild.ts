@@ -31,7 +31,7 @@ export default async function handler(
         res.status(500).json("error");
         return;
       }
-      console.log(`길드인원 호출완료`);
+      // console.log(`길드인원 호출완료`);
       cache.set(`guildMemberCount`, response.data.member_count);
       res.status(200).json(response.data.member_count);
       return;
@@ -43,7 +43,7 @@ export default async function handler(
       return;
     }
   } else {
-    console.log(`길드인원 캐시존재`);
+    // console.log(`길드인원 캐시존재`);
     res.status(200).json(cachedGuildMemberCount);
     return;
   }

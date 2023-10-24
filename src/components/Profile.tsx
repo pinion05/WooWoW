@@ -58,6 +58,14 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
 
   return (
     <div>
+      {/* <div
+        className="w-[30px] h-[30px] absolute translate-x-[80px] translate-y-[10px] bg-red-700 rounded-tr-[10px] text-amber-400 flex justify-center items-center focus pointer-events-none z-100"
+        onClick={() => {
+          console.log("닫기");
+        }}
+      >
+        X
+      </div> */}
       <Container
         onClick={(e) => {
           clickContainer();
@@ -74,6 +82,7 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
           {info.is_ghost && (
             <Image className="h-[100px] w-[100px] absolute" src={tomb} alt="" />
           )}
+
           <PlayerName>{info.name}</PlayerName>
         </ProfileContainer>
         <Info>
@@ -84,7 +93,7 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
             height={30}
             alt=""
           />
-          <span>{info.level}레벨</span>
+          <span className="pointer-events-none">{info.level}레벨</span>
         </Info>
       </Container>
       {isModalon && (
