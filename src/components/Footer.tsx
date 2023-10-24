@@ -5,9 +5,8 @@ export default function Footer(): JSX.Element {
         <a href="https://github.com/pinion05/shalompmc0505">
           <i className="fab fa-github"></i>
         </a>
-        https://github.com/pinion05
-        <br />
-        shalompmc0505@naver.com
+        <p>https://github.com/pinion05</p>
+        <p>shalompmc0505@naver.com</p>
       </p>
     </>
   );

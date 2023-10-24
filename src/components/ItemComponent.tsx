@@ -64,7 +64,10 @@ export default function IconComponent({
         {item && <img src={itemImgUrl} alt="" className="w-[100%] h-[100%]" />}
 
         {isMouseEnter && item && (
-          <TooltipContainer quality={item.quality.name}>
+          <TooltipContainer
+            className="max-sm:w-[100px]"
+            quality={item.quality.name}
+          >
             <ItemName quality={item.quality.name} className="flex">
               {item?.name}
             </ItemName>

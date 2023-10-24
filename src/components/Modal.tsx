@@ -197,11 +197,11 @@ export default function Modal({
     <dialog
       id="modal"
       ref={modalRef}
-      className="modal rounded-md overflow-visible "
+      className="modal rounded-md overflow-visible max-sm:w-[90vw] "
     >
       <div
         id="container"
-        className="modal-content w-[470px] h-auto flex flex-col bg-stone-900 rounded-lg"
+        className="modal-content w-[470px] h-auto flex flex-col bg-stone-900 rounded-lg max-sm:w-[100%]"
       >
         <div
           id="header"
@@ -246,7 +246,7 @@ export default function Modal({
               id="캐릭터렌더링"
               className="w-[100%] h-[51%] bg-neutral-900 ring-gray-500 ring-[2px] rounded-lg flex justify-end"
             >
-              <p className="text-gray-50 absolute left-[100px] text-4xl top-[160px]">
+              <p className="text-gray-50 absolute left-[100px] text-4xl top-[160px] max-sm:w-[100%]">
                 WOOWOW
               </p>
               <div className="flex flex-col">
@@ -298,7 +298,9 @@ export default function Modal({
                   return (
                     <>
                       <div className="flex justify-between m-[0]">
-                        <p className="text-sm text-yellow-500">{stat.name} </p>
+                        <p className="text-sm text-yellow-500 max-sm:w-[]">
+                          {stat.name}
+                        </p>
                         <p className="text-sm text-[#00ff00]">
                           {stat.effective}
                         </p>
