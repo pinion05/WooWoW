@@ -8,6 +8,7 @@ import CharacterStatistics from "@/model/Statistics";
 import wowHardcoreLogo from "../img/WOW_Classic_Hardcore_Logo_enUS.png";
 import Image from "next/image";
 import { Spacing } from "./styledComponents";
+import Link from "next/link";
 
 export default function Modal({
   info,
@@ -214,7 +215,7 @@ export default function Modal({
           >
             {info.name}
           </p>
-          <div
+          <button
             id="닫기버튼"
             onClick={() => {
               clickCloseButton();
@@ -222,7 +223,7 @@ export default function Modal({
             className="w-[50px] h-[35px] bg-red-800 justify-center items-center justify-self-end flex text-amber-300 cursor-pointer rounded-tr-lg"
           >
             X
-          </div>
+          </button>
         </div>
         <div id="서브타이틀" className="flex flex-col justify-center w-[100%]">
           <p className=" flex justify-center text-xs text-amber-300 ">
@@ -365,6 +366,12 @@ export default function Modal({
               );
             })}
           </ItemList>
+          <Link
+            href={`/moreinfo`}
+            className="p-[10px] bg-slate-300 absolute translate-x-[340px] max-sm:translate-x-[110px] max-sm:translate-y-[470px] translate-y-[48vh] text-[00ff00] rounded-md "
+          >
+            자세히보기
+          </Link>
         </div>
       </div>
     </dialog>
