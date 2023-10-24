@@ -1,19 +1,23 @@
 "use client";
 import Item from "@/model/Item";
 import itemOutline from "../img/default.png";
-import tooltipBg from "../img/tooltip.png";
 import { styled } from "styled-components";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import React from "react";
 import slotempty from "../img/slotempty.png";
+import Tooltip from "./Tooltip";
+import ItemDiscription from "./ItemDiscriptcion";
+import { dir } from "console";
 
 interface ItemComponentProps {
   item: Item | undefined;
+  dir: "right" | "left" | "top" | "bottom";
 }
 
 export default function IconComponent({
   item,
+  dir,
 }: ItemComponentProps): JSX.Element {
   const [isMouseEnter, setMouseEnter] = useState<boolean>();
   const [itemImgUrl, setItemUrl] = useState<string>();
@@ -44,8 +48,6 @@ export default function IconComponent({
     setMouseEnter(true);
   }
   function ContainerMouseLeave() {
-    // console.log(rec);
-
     setMouseEnter(false);
   }
 
@@ -62,88 +64,12 @@ export default function IconComponent({
         }}
       >
         {item && <img src={itemImgUrl} alt="" className="w-[100%] h-[100%]" />}
-
         {isMouseEnter && item && (
-          <TooltipContainer
-            className="max-sm:w-[100px]"
+          <Tooltip
+            dir={dir}
             quality={item.quality.name}
-          >
-            <ItemName quality={item.quality.name} className="flex">
-              {item?.name}
-            </ItemName>
-
-            <span className="text-white">
-              <ItemDiscription>{item.binding?.name}</ItemDiscription>
-
-              <div className="flex justify-between">
-                <ItemDiscription>{item.inventory_type?.name}</ItemDiscription>
-                <ItemDiscription className="mr-[20px]">
-                  {item.item_subclass?.name}
-                </ItemDiscription>
-              </div>
-
-              <ItemDiscription>
-                {item.armor?.display.display_string}
-              </ItemDiscription>
-
-              {item.stats?.map((stat, idx) => (
-                <ItemDiscription key={idx}>
-                  {stat.display.display_string}
-                </ItemDiscription>
-              ))}
-
-              {item.durability && (
-                <ItemDiscription>
-                  {item.durability.display_string}
-                </ItemDiscription>
-              )}
-
-              {item.weapon && (
-                <>
-                  <div className="flex justify-between">
-                    <ItemDiscription>
-                      {item.weapon.damage.display_string}
-                    </ItemDiscription>
-                    <ItemDiscription>
-                      {item.weapon.attack_speed.display_string}
-                    </ItemDiscription>
-                  </div>
-                  <ItemDiscription>
-                    {item.weapon.dps.display_string}
-                  </ItemDiscription>
-                </>
-              )}
-
-              {item.requirements && (
-                <>
-                  <ItemDiscription>
-                    {item.requirements.level?.display_string}
-                  </ItemDiscription>
-                </>
-              )}
-
-              {item.requirements && (
-                <ItemDiscription>
-                  {`아이템레벨 ${
-                    Number(
-                      item.requirements.level?.display_string.split(" ")[
-                        item.requirements.level.display_string.split(" ")
-                          .length - 1
-                      ]
-                    ) + 5
-                  }`}
-                </ItemDiscription>
-              )}
-
-              {item.spells?.map((spell, idx) => {
-                return (
-                  <ItemDiscription className="text-green-500" key={idx}>
-                    {spell.description}
-                  </ItemDiscription>
-                );
-              })}
-            </span>
-          </TooltipContainer>
+            ChildComponent={<ItemDiscription item={item} />}
+          ></Tooltip>
         )}
       </Container>
     </>
@@ -156,11 +82,6 @@ interface ContainerProps {
 const ItemName = styled.span<ContainerProps>`
   color: ${(props) => q_color(props.quality)};
   font-size: small;
-`;
-
-const ItemDiscription = styled.p`
-  margin: 0;
-  font-size: smaller;
 `;
 
 const TooltipContainer = styled.div<ContainerProps>`

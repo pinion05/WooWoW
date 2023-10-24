@@ -209,7 +209,7 @@ export default function Modal({
         >
           <p
             id="캐릭터이름"
-            className=" relative left-[135px] text-white text-[23px] w-[200px] justify-center flex"
+            className=" relative left-[135px] text-white text-[23px] w-[200px] justify-center flex max-sm:left-[20vw]"
           >
             {info.name}
           </p>
@@ -234,7 +234,7 @@ export default function Modal({
               (slot, idx) => {
                 return (
                   <>
-                    <IconComponent item={slot} key={idx} />
+                    <IconComponent item={slot} key={idx} dir="right" />
                     <Spacing height={5} />
                   </>
                 );
@@ -246,8 +246,8 @@ export default function Modal({
               id="캐릭터렌더링"
               className="w-[100%] h-[51%] bg-neutral-900 ring-gray-500 ring-[2px] rounded-lg flex justify-end"
             >
-              <p className="text-gray-50 absolute left-[100px] text-4xl top-[160px] max-sm:w-[100%]">
-                WOOWOW
+              <p className="text-gray-50 absolute left-[100px] text-4xl top-[160px] max-sm:w-[100%] max-sm:left-[100px] max-sm:text-xs">
+                WOOWOW_0.1
               </p>
               <div className="flex flex-col">
                 <div className="w-[30px] h-[30px] rounded-sm bg-gray-400 m-[3px] ring-[2px] ring-gray-500">
@@ -298,10 +298,10 @@ export default function Modal({
                   return (
                     <>
                       <div className="flex justify-between m-[0]">
-                        <p className="text-sm text-yellow-500 max-sm:w-[]">
+                        <p className="text-sm text-yellow-500 max-sm:text-xs">
                           {stat.name}
                         </p>
-                        <p className="text-sm text-[#00ff00]">
+                        <p className="text-sm text-[#00ff00] max-sm:text-xs">
                           {stat.effective}
                         </p>
                       </div>
@@ -315,13 +315,14 @@ export default function Modal({
                 id="캐릭터 코어스텟"
                 className="w-[50%] h-[auto] bg-stone-950 flex flex-col justify-start ring-zinc-400 ring-2 rounded-lg p-[2px]"
               >
-                {""}
                 {rstats.map((stat) => {
                   return (
                     <>
                       <div className="flex justify-between m-[0]">
-                        <p className="text-sm text-yellow-500">{stat.name} </p>
-                        <p className="text-sm text-[#00ff00]">
+                        <p className="text-sm text-yellow-500 max-sm:text-xs">
+                          {stat.name}{" "}
+                        </p>
+                        <p className="text-sm text-[#00ff00] max-sm:text-xs">
                           {stat.effective}
                         </p>
                       </div>
@@ -337,7 +338,7 @@ export default function Modal({
                 return (
                   <>
                     <Spacing width={3} />
-                    <IconComponent item={slot} key={idx} />
+                    <IconComponent item={slot} key={idx} dir="left" />
                     <Spacing width={3} />
                   </>
                 );
@@ -357,7 +358,7 @@ export default function Modal({
             ].map((slot, idx) => {
               return (
                 <>
-                  <IconComponent item={slot} key={idx} />
+                  <IconComponent item={slot} key={idx} dir="left" />
                   <Spacing height={5} />
                 </>
               );
