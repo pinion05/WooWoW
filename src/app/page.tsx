@@ -17,7 +17,7 @@ export default function Home(): JSX.Element {
         className="text-violet-800 underline"
         href="https://cafe.naver.com/steamindiegame/13454124"
       >
-        업데이트 조금 연기됩니다...
+        임시공지
       </a>
       <Image src={wowHardcoreLogo} alt="" />
       <ProfileArea />
