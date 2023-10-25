@@ -17,7 +17,8 @@ interface TokenData {
 export default async function getToken() {
   // prettier-ignore
   let tokenData: TokenData | undefined = tokenCache.get("accessToken");
-  if (tokenData === undefined || isTokenExpired(tokenData)) {
+
+  if (!tokenData || isTokenExpired(tokenData)) {
     // 토큰이 없거나 만료된 경우 새로운 토큰 요청
     try {
       console.log("토큰 캐시없음");
