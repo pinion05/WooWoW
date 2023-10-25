@@ -46,15 +46,10 @@ export default function ProfileArea(): JSX.Element {
       playerName: "드워프주르르",
       characterName: "드워프주르르",
     },
-    // {
-    //   playerName: "와저씨",
-    //   characterName: "솔뿌엉이",
-    // },
-
-    // {
-    //   playerName: "나",
-    //   characterName: "황제팬치육호기",
-    // },
+    {
+      playerName: "와저씨",
+      characterName: "솔뿌엉이",
+    },
   ]);
   //
   const searchRef = useRef<HTMLInputElement>(null);
@@ -127,7 +122,7 @@ export default function ProfileArea(): JSX.Element {
     } catch (error) {
       console.error(error);
       console.log(`캐릭터 검색중 badresponse`);
-      alert(` ${characterName} 이름이 존재하지 않습니다.`);
+      console.log(` ${characterName} 이름이 존재하지 않습니다.`);
       //* 캐릭터 검색 실패시 캐릭터 배열에서 삭제 => useEffect[OriginUserInfoArrayVal]실행
       setOriginUserInfoArrayVal((prev) =>
         prev.filter((user) => user.characterName !== characterName)

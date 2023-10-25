@@ -17,31 +17,29 @@ redisClient.on("error", (err: any) => {
 });
 redisClient.connect().then(); // redis v4 연결 (비동기)
 const redisCli = redisClient.v4;
-
 const cache = new NodeCache({ stdTTL: 60 * 1 });
 // prettier-ignore
 export default async function handler(req: NextApiRequest,res: NextApiResponse) {
   const accessToken = await getToken();
   const charactername = req.query.charactername as string;
-  const localCache : WoWCharacterProfile | undefined = cache.get(`charData_${charactername}`);
-  const redisCache = await redisCli.get(`Redis_character_${charactername}`);
-  
+  const localCache = cache.get(`local_character_${charactername}`);
+  const redisCache = await JSON.parse(await redisCli.get(`Redis_character_${charactername}`));
+
   if (localCache) {
     res.status(200).json(localCache)
     return
-  }
-
+  } 
   if (redisCache) {
-    console.log(`❌로컬 ${charactername} 스태스틱스 캐시없음`);
-    cache.set(`local_stastics_${charactername}`,redisCache)
+    console.log(`❌로컬 ${charactername} 캐릭터 캐시없음`);
+    cache.set(`local_character_${charactername}`, redisCache);
     res.status(200).json(redisCache)
     return
   }
-  console.log(`❌Redis ${charactername} 스태스틱스 캐시없음`);
+  console.log(`❌ Redis ${charactername} 캐릭터 캐시없음`);
+  
   try {
-    const response  = await axios.get(
-      // prettier-ignore
-      `https://kr.api.blizzard.com/profile/wow/character/makgora/${encodeURIComponent(charactername)}/statistics`,
+    const CharacterResponse = await axios.get(
+      `https://kr.api.blizzard.com/profile/wow/character/makgora/${encodeURIComponent(charactername)}`,
       {
         params: {
           namespace: "profile-classic1x-kr",
@@ -50,18 +48,9 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse) 
         },
       }
     );
-    if (response.status === 404) {
-      res.status(500).json("error");
-      return;
-    }
-    const characterData : WoWCharacterProfile = response.data;
-    cache.set(`local_stastics_${charactername}`, response.data);
-    redisCli.set(`Redia_stastics_${charactername}`)
-    res.status(200).json(response.data);
-    return;
   } catch (error) {
-    console.log(`${charactername} 스태스틱스 호출실패`);
-    res.status(500).json(error);
-    return;
+    
   }
+
+
 }
