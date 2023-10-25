@@ -4,6 +4,20 @@ import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 
+const redis = require("redis");
+const redisClient = redis.createClient({
+  url: `redis://${process.env.REDIS_USERNAME}:${process.env.REDIS_PASSWORD}@${process.env.REDIS_HOST}:${process.env.REDIS_PORT}/0`,
+  legacyMode: true,
+});
+redisClient.on("connect", () => {
+  console.info("Redis connected!");
+});
+redisClient.on("error", (err: any) => {
+  console.error("Redis Client Error", err);
+});
+redisClient.connect().then(); // redis v4 연결 (비동기)
+const redisCli = redisClient.v4;
+
 const cache = new NodeCache({ stdTTL: 60 * 1 });
 export default async function handler(
   req: NextApiRequest,
