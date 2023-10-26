@@ -83,7 +83,7 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
             <Image className="h-[100px] w-[100px] absolute" src={tomb} alt="" />
           )}
 
-          <PlayerName>{info.name}</PlayerName>
+          <PlayerName className="text-black">{info.name}</PlayerName>
         </ProfileContainer>
         <Info>
           <Image
@@ -93,7 +93,9 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
             height={30}
             alt=""
           />
-          <span className="pointer-events-none">{info.level}레벨</span>
+          <span className="pointer-events-none text-black h-[100%] max-sm:text-[23px]">
+            {info.level}레벨
+          </span>
         </Info>
       </Container>
       {isModalon && (

@@ -16,6 +16,7 @@ export default function ProfileArea(): JSX.Element {
     `지존아이네`,
     `드워프주르르`,
     `부가땅`,
+    `뽀짝쿵야`,
   ]);
 
   const [characterDatas, setChatacterDatas] = useState<WoWCharacterProfile[]>();
@@ -108,7 +109,7 @@ export default function ProfileArea(): JSX.Element {
           ref={inputRef}
           type="text"
           placeholder="캐릭터 이름을 검색하세요"
-          className="p-[5px] rounded-md shadow-gray-900 shadow-md"
+          className="p-[5px] rounded-md shadow-gray-900 shadow-md text-black"
         />
       </form>
       <Spacing height={20} />

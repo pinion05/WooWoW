@@ -52,8 +52,7 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse) 
       `https://kr.api.blizzard.com/profile/wow/character/makgora/${encodedName}/statistics?namespace=profile-classic1x-kr&access_token=KR8yFplomaTeggvFh9IELHFBMMPGWHR6UV&locale=ko_KR`);
 
 
-        console.log('완료');
-        const equimentResponseData = equimentResponse.data
+    const equimentResponseData = equimentResponse.data
     const characterResponseData : WoWCharacterProfile = characterResponse.data    
     const equimentItems : Item[]= equimentResponseData.equipped_items
     const stasticsResponseData : Statistics = stasticsResponse.data
