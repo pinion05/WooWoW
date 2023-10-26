@@ -43,7 +43,7 @@ try {
     `https://kr.api.blizzard.com/profile/wow/character/makgora/${encodeURIComponent(charactername)}/equipment`,
     {
       params: {
-        namespace: "profile-classic1x-kr",
+              namespace: "profile-classic1x-kr",
         locale: "ko_kr",
         access_token: accessToken,
       },

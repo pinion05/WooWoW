@@ -206,26 +206,6 @@
   "equipment": {
     "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/equipment?namespace=profile-classic1x-kr",
     "data": {
-      "_links": {
-        "self": {
-          "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/equipment?namespace=profile-classic1x-kr"
-        }
-      },
-      "character": {
-        "key": {
-          "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98?namespace=profile-classic1x-kr"
-        },
-        "name": "줄건줘",
-        "id": 7376991,
-        "realm": {
-          "key": {
-            "href": "https://kr.api.blizzard.com/data/wow/realm/5790?namespace=dynamic-classic1x-kr"
-          },
-          "name": "막고라",
-          "id": 5790,
-          "slug": "makgora"
-        }
-      },
       "equipped_items": [
         {
           "item": {
