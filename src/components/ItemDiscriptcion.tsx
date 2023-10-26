@@ -7,7 +7,6 @@ interface ItemDiscriptionProps {
 export default function ItemDiscription({ item }: ItemDiscriptionProps) {
   return (
     <>
-      {" "}
       <ItemName quality={item.quality.name} className="flex">
         {item?.name}
       </ItemName>

@@ -7,6 +7,7 @@ import LevelStep from "./LevelStep.client";
 import Character from "@/model/Characer";
 import { json } from "stream/consumers";
 import { Spacing } from "./styledComponents";
+import Loading from "./Loading";
 
 export default function ProfileArea(): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -113,13 +114,8 @@ export default function ProfileArea(): JSX.Element {
         />
       </form>
       <Spacing height={20} />
-      {!characterDatas && (
-        <div>
-          {" "}
-          <Spacing height={20}></Spacing>
-          <img src="https://i.namu.wiki/i/nzFreuEJ0CVPE-cL2GL87MOZp18-S5ceWM3KS6bufM-NmfAgFEsYB7ncI835taZCkx_zhDEzNiNlrSpVgfTGEQ.gif" />
-        </div>
-      )}
+
+      {!characterDatas && <Loading />}
       {characterDatas &&
         groupByConsecutiveNumbers(sortLevel(characterDatas)).map(
           (sameLevelcharcters: WoWCharacterProfile[], idx) => (
