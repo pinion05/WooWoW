@@ -26,7 +26,7 @@ const cache = new NodeCache({ stdTTL: 60 * 1 });
 // prettier-ignore
 export default async function handler(req: NextApiRequest,res: NextApiResponse) {
   const charactername = req.query.charactername as string
-  console.log(`${charactername} 요청`);
+  // console.log(`${charactername} 요청`);
   const encodedName = encodeURIComponent(charactername)
   
   const accessToken = await getToken();
@@ -68,7 +68,7 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse) 
     characterResponseData.equipment.items = resolveEquimentItemsAddURL
     characterResponseData.statistics.data = stasticsResponseData
     
-    redisCli.set(`Redis_character_${charactername}`, JSON.stringify(characterResponseData),60 * 2)
+    redisCli.set(`Redis_character_${charactername}`, JSON.stringify(characterResponseData),60 * 5)
     redisCli.expire(`Redis_character_${charactername}`, 60 * 3); // 3600초 후에 username 키 삭제
     res.status(200).json(characterResponseData)
     return

@@ -11,7 +11,7 @@ export default function Home(): JSX.Element {
   return (
     <main className="min-w-full flex flex-col items-center justify-center p-24">
       <GuildInfoArea />
-      {/* <WorldBuff /> */}
+      <WorldBuff />
 
       <Image src={wowHardcoreLogo} alt="" />
       <ProfileArea />

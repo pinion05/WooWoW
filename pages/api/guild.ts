@@ -19,6 +19,7 @@ redisClient.connect().then(); // redis v4 연결 (비동기)
 const redisCli = redisClient.v4;
 const cache = new NodeCache({ stdTTL: 60 * 1 });
 // prettier-ignore
+//!     ===========================================  endpoint =============================================================
 export default async function handler(req: NextApiRequest,res: NextApiResponse) {
   const accessToken = await getToken();
   const localCache = cache.get(`local_guildCount`);
@@ -53,7 +54,7 @@ if (redisCache) {
     }
     cache.set(`local_guildCount`, response.data.member_count);
     redisCli.set(`Redis_guildCount`,response.data.member_count)
-    // redisCli.expire('Redis_guildCount', 30); // 3600초 후에 username 키 삭제
+    redisCli.expire('Redis_guildCount', 30); // 3600초 후에 username 키 삭제
     res.status(200).json(response.data.member_count);
     return;
   } catch (error) {
