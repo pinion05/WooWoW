@@ -27,22 +27,10 @@ export default function IconComponent({
     // console.log("아이템컴포 마운트");
     if (item?.media?.id) {
       // console.log("아이템아이디 존재");
-      featchImg(item.media.id);
     } else {
       console.log("미디어 존재하지않음");
     }
   }, [item]);
-
-  async function featchImg(mediaid: number) {
-    try {
-      const response = await axios.get("/api/media", {
-        params: { mediaid: mediaid.toString() },
-      });
-      setItemUrl(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   function ContainerMouseenter() {
     setMouseEnter(true);
@@ -63,7 +51,9 @@ export default function IconComponent({
           ContainerMouseLeave();
         }}
       >
-        {item && <img src={itemImgUrl} alt="" className="w-[100%] h-[100%]" />}
+        {item && (
+          <img src={item.media.url} alt="" className="w-[100%] h-[100%]" />
+        )}
         {isMouseEnter && item && (
           <Tooltip
             dir={dir}

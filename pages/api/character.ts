@@ -5,6 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 import Item from "@/model/Item";
 import CharacterStatistics from "@/model/Statistics";
+import Statistics from "@/model/Statistics";
 const redis = require("redis");
 
 const redisClient = redis.createClient({
@@ -52,12 +53,10 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse) 
 
 
         console.log('완료');
-    const characterResponseData = characterResponse.data    
-    const equimentResponseData = equimentResponse.data
+        const equimentResponseData = equimentResponse.data
+    const characterResponseData : WoWCharacterProfile = characterResponse.data    
     const equimentItems : Item[]= equimentResponseData.equipped_items
-    const stasticsResponseData = stasticsResponse.data
-
-
+    const stasticsResponseData : Statistics = stasticsResponse.data
     const equimentItemsAddURL = equimentItems.map(async (item : Item, idx)=>{
       const response = await axios.get(`https://kr.api.blizzard.com/data/wow/media/item/${item.media.id}?namespace=static-1.14.4_50753-classic1x-kr&access_token=KR8yFplomaTeggvFh9IELHFBMMPGWHR6UV`)
       const imgURL = response.data.assets[0].value
@@ -65,11 +64,13 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse) 
       return item
     })
     const resolveEquimentItemsAddURL = await Promise.all(equimentItemsAddURL)
-    const allDatas = [characterResponseData,resolveEquimentItemsAddURL,stasticsResponseData]
 
-    redisCli.set(`Redis_character_${charactername}`, JSON.stringify(allDatas),60 * 2)
+    characterResponseData.equipment.items = resolveEquimentItemsAddURL
+    characterResponseData.statistics.data = stasticsResponseData
+    
+    redisCli.set(`Redis_character_${charactername}`, JSON.stringify(characterResponseData),60 * 2)
     redisCli.expire(`Redis_character_${charactername}`, 60 * 3); // 3600초 후에 username 키 삭제
-    res.status(200).json(allDatas)
+    res.status(200).json(characterResponseData)
     return
   } catch (error) {
     console.log('에러발생');

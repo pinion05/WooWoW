@@ -9,6 +9,7 @@ import wowHardcoreLogo from "../img/WOW_Classic_Hardcore_Logo_enUS.png";
 import Image from "next/image";
 import { Spacing } from "./styledComponents";
 import Link from "next/link";
+import Statistics from "@/model/Statistics";
 
 export default function Modal({
   info,
@@ -17,8 +18,9 @@ export default function Modal({
 }: CharacterProps): JSX.Element {
   const modalRef = useRef<HTMLDialogElement>(null);
 
-  const [equippedItems, setEquippedItems] = useState<Item[]>();
-  const [statistics, setStatistics] = useState<CharacterStatistics>();
+  const equippedItems: Item[] = info.equipment.items;
+  const statistics: Statistics = info.statistics.data;
+
   const [head, setHead] = useState<Item>();
   const [neak, setNeak] = useState<Item>();
   const [shoulders, setShoulders] = useState<Item>();
@@ -46,9 +48,7 @@ export default function Modal({
       return;
     }
     console.log(info.name + "마운트됨");
-    featchEquipment(info.name);
     clickContainer();
-    featchStatistics(info.name);
     mount = true;
   }, []);
 
@@ -61,19 +61,6 @@ export default function Modal({
     // console.log("닫기버튼 클릭됨");
     if (closeFunction) {
       closeFunction();
-    }
-  }
-
-  async function featchEquipment(chracterName: string) {
-    console.log("요청시도");
-    try {
-      const response = await axios.get(
-        `/api/equipment?charactername=${encodeURIComponent(chracterName)}`
-      );
-      setEquippedItems(response.data.equipped_items);
-      // console.log(response.data.equipped_items);
-    } catch (error) {
-      console.log(error);
     }
   }
 
@@ -148,18 +135,6 @@ export default function Modal({
     );
   });
 
-  async function featchStatistics(characterName: string) {
-    try {
-      const response = await axios.get("/api/statistics", {
-        params: {
-          charactername: characterName,
-        },
-      });
-      setStatistics(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
   interface RstatsProps {
     name: string;
     effective: string | number | undefined;

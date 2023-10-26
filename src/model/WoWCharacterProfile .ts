@@ -1,3 +1,6 @@
+import Item from "./Item";
+import Statistics from "./Statistics";
+
 interface SelfLink {
   href: string;
 }
@@ -87,8 +90,8 @@ export default interface WoWCharacterProfile {
   average_item_level: number;
   equipped_item_level: number;
   specializations: Links;
-  statistics: Links;
-  equipment: Links;
+  statistics: { herf: Links; data: Statistics };
+  equipment: { herf: Links; items: Item[] };
   appearance: Links;
   collections: Links;
 
