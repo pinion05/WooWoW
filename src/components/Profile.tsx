@@ -59,7 +59,7 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
   return (
     <div>
       {/* <div
-        className="w-[30px] h-[30px] absolute translate-x-[80px] translate-y-[10px] bg-red-700 rounded-tr-[10px] text-amber-400 flex justify-center items-center focus pointer-events-none z-100"
+        className="w-[30px] h-[30px] absolute translate-x-[80px] translate-y-[10px] bg-red-700 rounded-tr-[10px] text-amber-400 flex justify-center items-center focus pointer-events-none z-100 rounded-bl-[10px ]"
         onClick={() => {
           console.log("닫기");
         }}
@@ -83,7 +83,7 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
             <Image className="h-[100px] w-[100px] absolute" src={tomb} alt="" />
           )}
 
-          <PlayerName>{info.name}</PlayerName>
+          <PlayerName className="text-black">{info.name}</PlayerName>
         </ProfileContainer>
         <Info>
           <Image
@@ -93,7 +93,9 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
             height={30}
             alt=""
           />
-          <span className="pointer-events-none">{info.level}레벨</span>
+          <span className="pointer-events-none text-black h-[100%] max-sm:text-[23px]">
+            {info.level}레벨
+          </span>
         </Info>
       </Container>
       {isModalon && (
@@ -134,24 +136,8 @@ const ProfileContainer = styled.div`
   margin: 0;
 `;
 
-const PlayerImg = styled.img`
-  height: 100px;
-  width: 100px;
-  border-radius: 10px 10px 0px 0px;
-`;
-
-const Tomb = styled.img`
-  height: 100px;
-  position: absolute;
-`;
-
 const PlayerName = styled.span`
   font-size: 14px;
-`;
-
-const JobIcon = styled.img`
-  height: 30px;
-  border-radius: 0px 0px 0px 10px;
 `;
 
 const Info = styled.div`

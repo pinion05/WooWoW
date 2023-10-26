@@ -1,0 +1,1837 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98?namespace=profile-classic1x-kr"
+    }
+  },
+  "id": 7376991,
+  "name": "줄건줘",
+  "gender": {
+    "type": "MALE",
+    "name": "남성"
+  },
+  "faction": {
+    "type": "ALLIANCE",
+    "name": "얼라이언스"
+  },
+  "race": {
+    "key": {
+      "href": "https://kr.api.blizzard.com/data/wow/playable-race/1?namespace=static-1.14.4_50753-classic1x-kr"
+    },
+    "name": "인간",
+    "id": 1
+  },
+  "character_class": {
+    "key": {
+      "href": "https://kr.api.blizzard.com/data/wow/playable-class/8?namespace=static-1.14.4_50753-classic1x-kr"
+    },
+    "name": "마법사",
+    "id": 8
+  },
+  "active_spec": {
+    "key": {
+      "href": "https://kr.api.blizzard.com/data/wow/playable-specialization/0?namespace=static-1.14.4_50753-classic1x-kr"
+    },
+    "id": 0
+  },
+  "realm": {
+    "key": {
+      "href": "https://kr.api.blizzard.com/data/wow/realm/5790?namespace=dynamic-classic1x-kr"
+    },
+    "name": "막고라",
+    "id": 5790,
+    "slug": "makgora"
+  },
+  "guild": {
+    "key": {
+      "href": "https://kr.api.blizzard.com/data/wow/guild/makgora/%EC%99%81%ED%83%80%EB%B2%84%EC%8A%A4?namespace=profile-classic1x-kr"
+    },
+    "name": "왁타버스",
+    "id": 197010,
+    "realm": {
+      "key": {
+        "href": "https://kr.api.blizzard.com/data/wow/realm/5790?namespace=dynamic-classic1x-kr"
+      },
+      "name": "막고라",
+      "id": 5790,
+      "slug": "makgora"
+    },
+    "faction": {
+      "type": "ALLIANCE",
+      "name": "얼라이언스"
+    }
+  },
+  "level": 36,
+  "experience": 5408,
+  "titles": {
+    "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/titles?namespace=profile-classic1x-kr"
+  },
+  "pvp_summary": {
+    "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/pvp-summary?namespace=profile-classic1x-kr"
+  },
+  "media": {
+    "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/character-media?namespace=profile-classic1x-kr"
+  },
+  "last_login_timestamp": 1698173274000,
+  "average_item_level": 23,
+  "equipped_item_level": 23,
+  "specializations": {
+    "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/specializations?namespace=profile-classic1x-kr"
+  },
+  "statistics": {
+    "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/statistics?namespace=profile-classic1x-kr",
+    "data": {
+      "_links": {
+        "self": {
+          "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/statistics?namespace=profile-classic1x-kr"
+        }
+      },
+      "health": 1018,
+      "power": 2934,
+      "power_type": {
+        "key": {
+          "href": "https://kr.api.blizzard.com/data/wow/power-type/0?namespace=static-1.14.4_50753-classic1x-kr"
+        },
+        "name": "마나",
+        "id": 0
+      },
+      "strength": {
+        "base": 25,
+        "effective": 35
+      },
+      "agility": {
+        "base": 28,
+        "effective": 31
+      },
+      "intellect": {
+        "base": 74,
+        "effective": 164
+      },
+      "stamina": {
+        "base": 33,
+        "effective": 68
+      },
+      "melee_crit": {
+        "rating": 0,
+        "rating_bonus": 0.0,
+        "value": 0.0
+      },
+      "attack_power": 25,
+      "main_hand_damage_min": 61.07143,
+      "main_hand_damage_max": 90.07143,
+      "main_hand_speed": 3.4,
+      "main_hand_dps": 22.226889,
+      "off_hand_damage_min": 2.2142859,
+      "off_hand_damage_max": 2.2142859,
+      "off_hand_speed": 2.0,
+      "off_hand_dps": 1.1071429,
+      "spell_power": 10,
+      "spell_penetration": 0,
+      "spell_crit": {
+        "rating": 0,
+        "rating_bonus": 0.0,
+        "value": 5.2511997
+      },
+      "mana_regen": 82.0,
+      "mana_regen_combat": 82.0,
+      "armor": {
+        "base": 336,
+        "effective": 674
+      },
+      "dodge": {
+        "rating": 0,
+        "rating_bonus": 0.0,
+        "value": 4.3533
+      },
+      "parry": {
+        "rating": 0,
+        "rating_bonus": 0.0,
+        "value": 0.0
+      },
+      "block": {
+        "rating": 0,
+        "rating_bonus": 0.0,
+        "value": 0.0
+      },
+      "ranged_crit": {
+        "rating": 0,
+        "rating_bonus": 0.0,
+        "value": 4.9133005
+      },
+      "character": {
+        "key": {
+          "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98?namespace=profile-classic1x-kr"
+        },
+        "name": "줄건줘",
+        "id": 7376991,
+        "realm": {
+          "key": {
+            "href": "https://kr.api.blizzard.com/data/wow/realm/5790?namespace=dynamic-classic1x-kr"
+          },
+          "name": "막고라",
+          "id": 5790,
+          "slug": "makgora"
+        }
+      },
+      "spirit": {
+        "base": 71,
+        "effective": 82
+      },
+      "defense": {
+        "base": 159,
+        "effective": 159
+      },
+      "fire_resistance": {
+        "base": 0,
+        "effective": 0
+      },
+      "holy_resistance": {
+        "base": 0,
+        "effective": 0
+      },
+      "shadow_resistance": {
+        "base": 0,
+        "effective": 5
+      },
+      "nature_resistance": {
+        "base": 0,
+        "effective": 10
+      },
+      "arcane_resistance": {
+        "base": 0,
+        "effective": 5
+      }
+    }
+  },
+  "equipment": {
+    "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/equipment?namespace=profile-classic1x-kr",
+    "data": {
+      "equipped_items": [
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/7048?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 7048
+          },
+          "slot": {
+            "type": "HEAD",
+            "name": "머리"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "COMMON",
+            "name": "일반"
+          },
+          "name": "감청색 비단 두건",
+          "media": {
+            "data": {
+              "_links": {
+                "self": {
+                  "href": "https://kr.api.blizzard.com/data/wow/media/item/3560?namespace=static-1.14.4_50753-classic1x-kr"
+                }
+              },
+              "assets": [
+                {
+                  "key": "icon",
+                  "value": "https://render.worldofwarcraft.com/classic1x-kr/icons/56/inv_shoulder_05.jpg",
+                  "file_data_id": 135036
+                }
+              ],
+              "id": 3560
+            },
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/7048?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 7048
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "천",
+            "id": 1
+          },
+          "inventory_type": {
+            "type": "HEAD",
+            "name": "머리"
+          },
+          "armor": {
+            "value": 33,
+            "display": {
+              "display_string": "방어도 33",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              }
+            }
+          },
+          "sell_price": {
+            "value": 745,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "7",
+              "copper": "45"
+            }
+          },
+          "requirements": {
+            "level": {
+              "value": 24,
+              "display_string": "최소 요구 레벨 24"
+            }
+          },
+          "durability": {
+            "value": 45,
+            "display_string": "내구도 45 / 45"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/12998?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 12998
+          },
+          "slot": {
+            "type": "SHOULDER",
+            "name": "어깨"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "RARE",
+            "name": "희귀"
+          },
+          "name": "마술사 어깨보호대",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/12998?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 12998
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "천",
+            "id": 1
+          },
+          "inventory_type": {
+            "type": "SHOULDER",
+            "name": "어깨"
+          },
+          "binding": {
+            "type": "ON_EQUIP",
+            "name": "착용 시 귀속"
+          },
+          "armor": {
+            "value": 32,
+            "display": {
+              "display_string": "방어도 32",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              }
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 9,
+              "display": {
+                "display_string": "지능 +9",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "spells": [
+            {
+              "spell": {
+                "key": {
+                  "href": "https://kr.api.blizzard.com/data/wow/spell/9395?namespace=static-1.14.4_50753-classic1x-kr"
+                },
+                "name": "모든 계열 효과 증가 5",
+                "id": 9395
+              },
+              "description": "착용 효과: 모든 주문 및 효과에 의한 피해와 치유량이 최대 5만큼 증가합니다."
+            }
+          ],
+          "sell_price": {
+            "value": 1020,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "10",
+              "copper": "20"
+            }
+          },
+          "requirements": {
+            "level": {
+              "value": 20,
+              "display_string": "최소 요구 레벨 20"
+            }
+          },
+          "durability": {
+            "value": 45,
+            "display_string": "내구도 45 / 45"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/2579?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 2579
+          },
+          "slot": {
+            "type": "SHIRT",
+            "name": "속옷"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "COMMON",
+            "name": "일반"
+          },
+          "name": "녹색 리넨 셔츠",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/2579?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 2579
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "기타",
+            "id": 0
+          },
+          "inventory_type": {
+            "type": "BODY",
+            "name": "속옷"
+          },
+          "sell_price": {
+            "value": 37,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "0",
+              "copper": "37"
+            }
+          },
+          "is_subclass_hidden": true
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/15455?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 15455
+          },
+          "enchantments": [
+            {
+              "display_string": "마법부여: 방어도 보강 +16",
+              "source_item": {
+                "key": {
+                  "href": "https://kr.api.blizzard.com/data/wow/item/2313?namespace=static-1.14.4_50753-classic1x-kr"
+                },
+                "name": "일반 방어구 키트",
+                "id": 2313
+              },
+              "enchantment_id": 16,
+              "enchantment_slot": {
+                "id": 0,
+                "type": "PERMANENT"
+              }
+            }
+          ],
+          "slot": {
+            "type": "CHEST",
+            "name": "가슴"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "UNCOMMON",
+            "name": "고급"
+          },
+          "name": "가루비 로브",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/15455?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 15455
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "천",
+            "id": 1
+          },
+          "inventory_type": {
+            "type": "ROBE",
+            "name": "가슴"
+          },
+          "binding": {
+            "type": "ON_ACQUIRE",
+            "name": "획득 시 귀속"
+          },
+          "armor": {
+            "value": 49,
+            "display": {
+              "display_string": "방어도 49",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              }
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "STAMINA",
+                "name": "체력"
+              },
+              "value": 8,
+              "display": {
+                "display_string": "체력 +8",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 11,
+              "display": {
+                "display_string": "지능 +11",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "sell_price": {
+            "value": 3541,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "35",
+              "copper": "41"
+            }
+          },
+          "durability": {
+            "value": 70,
+            "display_string": "내구도 70 / 70"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/2911?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 2911
+          },
+          "slot": {
+            "type": "WAIST",
+            "name": "허리"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "RARE",
+            "name": "희귀"
+          },
+          "name": "켈러의 벨트",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/2911?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 2911
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "천",
+            "id": 1
+          },
+          "inventory_type": {
+            "type": "WAIST",
+            "name": "허리"
+          },
+          "binding": {
+            "type": "ON_EQUIP",
+            "name": "착용 시 귀속"
+          },
+          "armor": {
+            "value": 23,
+            "display": {
+              "display_string": "방어도 23",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              }
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "STAMINA",
+                "name": "체력"
+              },
+              "value": 3,
+              "display": {
+                "display_string": "체력 +3",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 8,
+              "display": {
+                "display_string": "지능 +8",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "sell_price": {
+            "value": 524,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "5",
+              "copper": "24"
+            }
+          },
+          "requirements": {
+            "level": {
+              "value": 18,
+              "display_string": "최소 요구 레벨 18"
+            }
+          },
+          "durability": {
+            "value": 20,
+            "display_string": "내구도 20 / 20"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/7046?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 7046
+          },
+          "slot": {
+            "type": "LEGS",
+            "name": "다리"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "UNCOMMON",
+            "name": "고급"
+          },
+          "name": "감청색 비단 바지",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/7046?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 7046
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "천",
+            "id": 1
+          },
+          "inventory_type": {
+            "type": "LEGS",
+            "name": "다리"
+          },
+          "binding": {
+            "type": "ON_EQUIP",
+            "name": "착용 시 귀속"
+          },
+          "armor": {
+            "value": 36,
+            "display": {
+              "display_string": "방어도 36",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              }
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 6,
+              "display": {
+                "display_string": "지능 +6",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "spells": [
+            {
+              "spell": {
+                "key": {
+                  "href": "https://kr.api.blizzard.com/data/wow/spell/7703?namespace=static-1.14.4_50753-classic1x-kr"
+                },
+                "name": "냉기계 공격력 증가",
+                "id": 7703
+              },
+              "description": "착용 효과: 냉기 계열의 주문과 효과의 공격력이 최대 10만큼 증가합니다."
+            }
+          ],
+          "sell_price": {
+            "value": 1494,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "14",
+              "copper": "94"
+            }
+          },
+          "requirements": {
+            "level": {
+              "value": 23,
+              "display_string": "최소 요구 레벨 23"
+            }
+          },
+          "durability": {
+            "value": 49,
+            "display_string": "내구도 49 / 50"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/9454?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 9454
+          },
+          "enchantments": [
+            {
+              "display_string": "마법부여: 최하급 속도 증가",
+              "source_item": {
+                "key": {
+                  "href": "https://kr.api.blizzard.com/data/wow/item/22587?namespace=static-1.14.4_50753-classic1x-kr"
+                },
+                "name": null,
+                "id": 22587
+              },
+              "enchantment_id": 911,
+              "enchantment_slot": {
+                "id": 0,
+                "type": "PERMANENT"
+              }
+            }
+          ],
+          "slot": {
+            "type": "FEET",
+            "name": "발"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "RARE",
+            "name": "희귀"
+          },
+          "name": "방사능처리 장화",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/9454?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 9454
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "천",
+            "id": 1
+          },
+          "inventory_type": {
+            "type": "FEET",
+            "name": "발"
+          },
+          "binding": {
+            "type": "ON_ACQUIRE",
+            "name": "획득 시 귀속"
+          },
+          "armor": {
+            "value": 34,
+            "display": {
+              "display_string": "방어도 34",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              }
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 8,
+              "display": {
+                "display_string": "지능 +8",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "SPIRIT",
+                "name": "정신력"
+              },
+              "value": 4,
+              "display": {
+                "display_string": "정신력 +4",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "NATURE_RESISTANCE",
+                "name": "자연 저항력"
+              },
+              "value": 5,
+              "display": {
+                "display_string": "자연 저항력 +5",
+                "color": {
+                  "r": 0,
+                  "g": 255,
+                  "b": 0,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "spells": [
+            {
+              "spell": {
+                "key": {
+                  "href": "https://kr.api.blizzard.com/data/wow/spell/9395?namespace=static-1.14.4_50753-classic1x-kr"
+                },
+                "name": "모든 계열 효과 증가 5",
+                "id": 9395
+              },
+              "description": "착용 효과: 모든 주문 및 효과에 의한 피해와 치유량이 최대 5만큼 증가합니다."
+            }
+          ],
+          "sell_price": {
+            "value": 1984,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "19",
+              "copper": "84"
+            }
+          },
+          "requirements": {
+            "level": {
+              "value": 27,
+              "display_string": "최소 요구 레벨 27"
+            }
+          },
+          "durability": {
+            "value": 35,
+            "display_string": "내구도 35 / 40"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/4036?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 4036
+          },
+          "slot": {
+            "type": "WRIST",
+            "name": "손목"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "UNCOMMON",
+            "name": "고급"
+          },
+          "name": "은빛매듭 소매장식",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/4036?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 4036
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "천",
+            "id": 1
+          },
+          "inventory_type": {
+            "type": "WRIST",
+            "name": "손목"
+          },
+          "binding": {
+            "type": "ON_EQUIP",
+            "name": "착용 시 귀속"
+          },
+          "armor": {
+            "value": 18,
+            "display": {
+              "display_string": "방어도 18",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              }
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "STAMINA",
+                "name": "체력"
+              },
+              "value": 2,
+              "display": {
+                "display_string": "체력 +2",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 5,
+              "display": {
+                "display_string": "지능 +5",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "sell_price": {
+            "value": 681,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "6",
+              "copper": "81"
+            }
+          },
+          "requirements": {
+            "level": {
+              "value": 22,
+              "display_string": "최소 요구 레벨 22"
+            }
+          },
+          "durability": {
+            "value": 25,
+            "display_string": "내구도 25 / 25"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/3759?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 3759
+          },
+          "enchantments": [
+            {
+              "display_string": "마법부여: 방어도 보강 +32",
+              "source_item": {
+                "key": {
+                  "href": "https://kr.api.blizzard.com/data/wow/item/8173?namespace=static-1.14.4_50753-classic1x-kr"
+                },
+                "name": "두꺼운 방어구 키트",
+                "id": 8173
+              },
+              "enchantment_id": 18,
+              "enchantment_slot": {
+                "id": 0,
+                "type": "PERMANENT"
+              }
+            }
+          ],
+          "slot": {
+            "type": "HANDS",
+            "name": "손"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "UNCOMMON",
+            "name": "고급"
+          },
+          "name": "은둔자의 장갑",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/3759?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 3759
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "천",
+            "id": 1
+          },
+          "inventory_type": {
+            "type": "HAND",
+            "name": "손"
+          },
+          "binding": {
+            "type": "ON_ACQUIRE",
+            "name": "획득 시 귀속"
+          },
+          "armor": {
+            "value": 28,
+            "display": {
+              "display_string": "방어도 28",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              }
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "STAMINA",
+                "name": "체력"
+              },
+              "value": 7,
+              "display": {
+                "display_string": "체력 +7",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 6,
+              "display": {
+                "display_string": "지능 +6",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "sell_price": {
+            "value": 1216,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "12",
+              "copper": "16"
+            }
+          },
+          "durability": {
+            "value": 25,
+            "display_string": "내구도 25 / 25"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/9461?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 9461
+          },
+          "enchantments": [
+            {
+              "display_string": "지능 +6",
+              "enchantment_id": 96,
+              "enchantment_slot": {
+                "id": 8
+              }
+            },
+            {
+              "display_string": "힘 +7",
+              "enchantment_id": 109,
+              "enchantment_slot": {
+                "id": 9
+              }
+            }
+          ],
+          "slot": {
+            "type": "FINGER_1",
+            "name": "반지 1"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "RARE",
+            "name": "희귀"
+          },
+          "name": "고릴라의 전자 기어",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/9461?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 9461
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "기타",
+            "id": 0
+          },
+          "inventory_type": {
+            "type": "FINGER",
+            "name": "손가락"
+          },
+          "binding": {
+            "type": "ON_ACQUIRE",
+            "name": "획득 시 귀속"
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "NATURE_RESISTANCE",
+                "name": "자연 저항력"
+              },
+              "value": 5,
+              "display": {
+                "display_string": "자연 저항력 +5",
+                "color": {
+                  "r": 0,
+                  "g": 255,
+                  "b": 0,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "ARCANE_RESISTANCE",
+                "name": "비전 저항력"
+              },
+              "value": 5,
+              "display": {
+                "display_string": "비전 저항력 +5",
+                "color": {
+                  "r": 0,
+                  "g": 255,
+                  "b": 0,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "sell_price": {
+            "value": 4586,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "45",
+              "copper": "86"
+            }
+          },
+          "requirements": {
+            "level": {
+              "value": 32,
+              "display_string": "최소 요구 레벨 32"
+            }
+          },
+          "is_subclass_hidden": true
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/2933?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 2933
+          },
+          "slot": {
+            "type": "FINGER_2",
+            "name": "반지 2"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "RARE",
+            "name": "희귀"
+          },
+          "name": "린의 인장",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/2933?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 2933
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "기타",
+            "id": 0
+          },
+          "inventory_type": {
+            "type": "FINGER",
+            "name": "손가락"
+          },
+          "binding": {
+            "type": "ON_ACQUIRE",
+            "name": "획득 시 귀속"
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "STRENGTH",
+                "name": "힘"
+              },
+              "value": 3,
+              "display": {
+                "display_string": "힘 +3",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "AGILITY",
+                "name": "민첩성"
+              },
+              "value": 3,
+              "display": {
+                "display_string": "민첩성 +3",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "STAMINA",
+                "name": "체력"
+              },
+              "value": 4,
+              "display": {
+                "display_string": "체력 +4",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 4,
+              "display": {
+                "display_string": "지능 +4",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "SPIRIT",
+                "name": "정신력"
+              },
+              "value": 3,
+              "display": {
+                "display_string": "정신력 +3",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "sell_price": {
+            "value": 3750,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "37",
+              "copper": "50"
+            }
+          },
+          "is_subclass_hidden": true
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/14582?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 14582
+          },
+          "slot": {
+            "type": "BACK",
+            "name": "등"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "UNCOMMON",
+            "name": "고급"
+          },
+          "name": "도깨비 외투",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/14582?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 14582
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "천",
+            "id": 1
+          },
+          "inventory_type": {
+            "type": "CLOAK",
+            "name": "등"
+          },
+          "binding": {
+            "type": "ON_EQUIP",
+            "name": "착용 시 귀속"
+          },
+          "armor": {
+            "value": 21,
+            "display": {
+              "display_string": "방어도 21",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              }
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "STAMINA",
+                "name": "체력"
+              },
+              "value": 5,
+              "display": {
+                "display_string": "체력 +5",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 2,
+              "display": {
+                "display_string": "지능 +2",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "sell_price": {
+            "value": 1088,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "10",
+              "copper": "88"
+            }
+          },
+          "requirements": {
+            "level": {
+              "value": 23,
+              "display_string": "최소 요구 레벨 23"
+            }
+          },
+          "is_subclass_hidden": true
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/890?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 890
+          },
+          "slot": {
+            "type": "MAIN_HAND",
+            "name": "주장비"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "RARE",
+            "name": "희귀"
+          },
+          "name": "술자의 뒤틀린 지팡이",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/890?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 890
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/2?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "무기",
+            "id": 2
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/2/item-subclass/10?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "지팡이",
+            "id": 10
+          },
+          "inventory_type": {
+            "type": "TWOHWEAPON",
+            "name": "양손 장비"
+          },
+          "binding": {
+            "type": "ON_EQUIP",
+            "name": "착용 시 귀속"
+          },
+          "weapon": {
+            "damage": {
+              "min_value": 55,
+              "max_value": 84,
+              "display_string": "공격력 55 - 84",
+              "damage_class": {
+                "type": "PHYSICAL",
+                "name": "물리"
+              }
+            },
+            "attack_speed": {
+              "value": 3400,
+              "display_string": "속도 3.40"
+            },
+            "dps": {
+              "value": 20.441175,
+              "display_string": "(초당 공격력 20.4)"
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "STAMINA",
+                "name": "체력"
+              },
+              "value": 6,
+              "display": {
+                "display_string": "체력 +6",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "INTELLECT",
+                "name": "지능"
+              },
+              "value": 10,
+              "display": {
+                "display_string": "지능 +10",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "sell_price": {
+            "value": 3517,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "35",
+              "copper": "17"
+            }
+          },
+          "requirements": {
+            "level": {
+              "value": 19,
+              "display_string": "최소 요구 레벨 19"
+            }
+          },
+          "durability": {
+            "value": 90,
+            "display_string": "내구도 90 / 90"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/7001?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 7001
+          },
+          "slot": {
+            "type": "RANGED",
+            "name": "원거리 장비"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "RARE",
+            "name": "희귀"
+          },
+          "name": "묘비의 홀",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/7001?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 7001
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/2?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "무기",
+            "id": 2
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/2/item-subclass/19?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "마법봉",
+            "id": 19
+          },
+          "inventory_type": {
+            "type": "RANGEDRIGHT",
+            "name": "원거리 장비"
+          },
+          "binding": {
+            "type": "ON_ACQUIRE",
+            "name": "획득 시 귀속"
+          },
+          "weapon": {
+            "damage": {
+              "min_value": 30,
+              "max_value": 57,
+              "display_string": "암흑계 공격력 30 - 57",
+              "damage_class": {
+                "type": "SHADOW",
+                "name": "암흑"
+              }
+            },
+            "attack_speed": {
+              "value": 1500,
+              "display_string": "속도 1.50"
+            },
+            "dps": {
+              "value": 28.999998,
+              "display_string": "(초당 공격력 29.0)"
+            }
+          },
+          "stats": [
+            {
+              "type": {
+                "type": "SPIRIT",
+                "name": "정신력"
+              },
+              "value": 1,
+              "display": {
+                "display_string": "정신력 +1",
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 1.0
+                }
+              }
+            },
+            {
+              "type": {
+                "type": "SHADOW_RESISTANCE",
+                "name": "암흑 저항력"
+              },
+              "value": 5,
+              "display": {
+                "display_string": "암흑 저항력 +5",
+                "color": {
+                  "r": 0,
+                  "g": 255,
+                  "b": 0,
+                  "a": 1.0
+                }
+              }
+            }
+          ],
+          "sell_price": {
+            "value": 3535,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "35",
+              "copper": "35"
+            }
+          },
+          "durability": {
+            "value": 65,
+            "display_string": "내구도 65 / 65"
+          }
+        },
+        {
+          "item": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item/5976?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 5976
+          },
+          "slot": {
+            "type": "TABARD",
+            "name": "겉옷"
+          },
+          "quantity": 1,
+          "quality": {
+            "type": "COMMON",
+            "name": "일반"
+          },
+          "name": "길드 휘장",
+          "media": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/media/item/5976?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "id": 5976
+          },
+          "item_class": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "방어구",
+            "id": 4
+          },
+          "item_subclass": {
+            "key": {
+              "href": "https://kr.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-1.14.4_50753-classic1x-kr"
+            },
+            "name": "기타",
+            "id": 0
+          },
+          "inventory_type": {
+            "type": "TABARD",
+            "name": "장신구"
+          },
+          "sell_price": {
+            "value": 2500,
+            "display_strings": {
+              "header": "판매 가격:",
+              "gold": "0",
+              "silver": "25",
+              "copper": "0"
+            }
+          },
+          "is_subclass_hidden": true
+        }
+      ],
+      "equipped_item_sets": [{}]
+    }
+  },
+  "appearance": {
+    "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/appearance?namespace=profile-classic1x-kr"
+  },
+  "collections": {
+    "href": "https://kr.api.blizzard.com/profile/wow/character/makgora/%EC%A4%84%EA%B1%B4%EC%A4%98/collections?namespace=profile-classic1x-kr"
+  },
+  "is_ghost": false
+}

@@ -20,6 +20,7 @@ export default interface Item {
       href: string;
     };
     id: number; // Optional property
+    url?: string;
   };
   item_class?: {
     key?: {

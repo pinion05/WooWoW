@@ -9,6 +9,7 @@ import wowHardcoreLogo from "../img/WOW_Classic_Hardcore_Logo_enUS.png";
 import Image from "next/image";
 import { Spacing } from "./styledComponents";
 import Link from "next/link";
+import Statistics from "@/model/Statistics";
 
 export default function Modal({
   info,
@@ -17,8 +18,9 @@ export default function Modal({
 }: CharacterProps): JSX.Element {
   const modalRef = useRef<HTMLDialogElement>(null);
 
-  const [equippedItems, setEquippedItems] = useState<Item[]>();
-  const [statistics, setStatistics] = useState<CharacterStatistics>();
+  const equippedItems: Item[] = info.equipment.items;
+  const statistics: Statistics = info.statistics.data;
+
   const [head, setHead] = useState<Item>();
   const [neak, setNeak] = useState<Item>();
   const [shoulders, setShoulders] = useState<Item>();
@@ -45,10 +47,8 @@ export default function Modal({
     if (mount) {
       return;
     }
-    console.log(info.name + "마운트됨");
-    featchEquipment(info.name);
+    // console.log(info.name + "마운트됨");
     clickContainer();
-    featchStatistics(info.name);
     mount = true;
   }, []);
 
@@ -64,24 +64,7 @@ export default function Modal({
     }
   }
 
-  async function featchEquipment(chracterName: string) {
-    console.log("요청시도");
-    try {
-      const response = await axios.get(
-        `/api/equipment?charactername=${encodeURIComponent(chracterName)}`
-      );
-      setEquippedItems(response.data.equipped_items);
-      // console.log(response.data.equipped_items);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   useEffect(() => {
-    console.log(
-      "🚀 ~ file: Modal.tsx:81 ~ useEffect ~ equippedItems:",
-      equippedItems
-    );
     equippedItems?.forEach(
       (item: Item) => {
         switch (item.slot.name) {
@@ -148,18 +131,6 @@ export default function Modal({
     );
   });
 
-  async function featchStatistics(characterName: string) {
-    try {
-      const response = await axios.get("/api/statistics", {
-        params: {
-          charactername: characterName,
-        },
-      });
-      setStatistics(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
   interface RstatsProps {
     name: string;
     effective: string | number | undefined;
@@ -249,7 +220,7 @@ export default function Modal({
               className="w-[100%] h-[51%] bg-neutral-900 ring-gray-500 ring-[2px] rounded-lg flex justify-end"
             >
               <p className="text-gray-50 absolute left-[100px] text-2xl top-[160px] max-sm:w-[100%] max-sm:left-[100px] max-sm:text-xs">
-                WOOWOW_0.1.1
+                WOOWOW_0.1.2
               </p>
               <div className="flex flex-col">
                 <div className="w-[30px] h-[30px] rounded-sm bg-gray-400 m-[3px] ring-[2px] ring-gray-500">

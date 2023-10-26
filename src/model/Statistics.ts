@@ -1,4 +1,4 @@
-export default interface CharacterStatistics {
+export default interface Statistics {
   _links: {
     self: {
       href: string;
