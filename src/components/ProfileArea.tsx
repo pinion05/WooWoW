@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { RefObject, useEffect, useRef, useState } from "react";
+import { FormEvent, RefObject, useEffect, useRef, useState } from "react";
 import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 import LevelStep from "./LevelStep.client";
 import Character from "@/model/Characer";
@@ -9,14 +9,13 @@ import { json } from "stream/consumers";
 import { Spacing } from "./styledComponents";
 
 export default function ProfileArea(): JSX.Element {
-  const searchRef = useRef<HTMLInputElement>(null);
-  const inputVal = searchRef.current?.value as string;
+  const inputRef = useRef<HTMLInputElement>(null);
   const [characterNames, setCharacterNames] = useState<string[]>([
     `줄건줘`,
     `응안줘`,
   ]);
 
-  const [characterDatas, setChatacterDatas] = useState<null | any[]>(null);
+  const [characterDatas, setChatacterDatas] = useState<WoWCharacterProfile[]>();
 
   let mounted = false;
 
@@ -27,16 +26,27 @@ export default function ProfileArea(): JSX.Element {
   }, []);
 
   async function featchCharacterDatas(names: string[]) {
-    const responseArray = names.map(async (name: string) => {
+    const responseArray = names.map(async (name: string, idx) => {
       try {
         const respons = await axios.get(
           `/api/character?charactername=${encodeURIComponent(name)}`
         );
         return respons.data;
-      } catch (error) {}
+      } catch (error) {
+        console.log(`캐릭터를 찾을 수 없습니다.`);
+        setCharacterNames((pre) => pre.filter((ele) => ele !== name));
+      }
     });
-    const chacterDatas = await Promise.all(responseArray);
-    setChatacterDatas(chacterDatas);
+    const chacterDatas = (await Promise.allSettled(responseArray)).filter(
+      (result): result is PromiseFulfilledResult<WoWCharacterProfile> =>
+        result.status === "fulfilled" && result.value !== undefined
+    );
+
+    const suitableArray = chacterDatas.map(
+      (data: PromiseFulfilledResult<any>) => data.value
+    );
+
+    setChatacterDatas(suitableArray);
   }
 
   useEffect(() => {
@@ -45,6 +55,10 @@ export default function ProfileArea(): JSX.Element {
   // prettier-ignore
 
   //
+
+  function sortLevel (characters : WoWCharacterProfile[]) {
+    return characters.sort((a,b)=> b.level - a.level )
+  }
 
   // prettier-ignore
   function groupByConsecutiveNumbers(characterDatas: WoWCharacterProfile[]): WoWCharacterProfile[][] {
@@ -67,13 +81,28 @@ export default function ProfileArea(): JSX.Element {
     return result;
   }
 
-  //
+  function submitForm(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log(inputRef.current?.value);
+    if (inputRef.current?.value === "") {
+      console.log(`캐릭터 이름을 입력하세요`);
+      return;
+    }
+    if (inputRef.current !== null) {
+      setCharacterNames((pre) => [...pre, inputRef.current!.value]);
+    }
+  }
+
+  useEffect(() => {
+    console.log(characterNames);
+    featchCharacterDatas(characterNames);
+  }, [characterNames]);
 
   return (
     <>
-      <form onSubmit={() => {}}>
+      <form onSubmit={submitForm}>
         <input
-          ref={searchRef}
+          ref={inputRef}
           type="text"
           placeholder="캐릭터 이름을 검색하세요"
           className="p-[5px] rounded-md shadow-gray-900 shadow-md"
@@ -82,7 +111,7 @@ export default function ProfileArea(): JSX.Element {
       <Spacing height={20} />
 
       {characterDatas &&
-        groupByConsecutiveNumbers(characterDatas).map(
+        groupByConsecutiveNumbers(sortLevel(characterDatas)).map(
           (sameLevelcharcters: WoWCharacterProfile[], idx) => (
             <>
               <LevelStep characterDatas={sameLevelcharcters}></LevelStep>
