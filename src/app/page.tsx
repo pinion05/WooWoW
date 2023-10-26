@@ -19,6 +19,12 @@ export default function Home(): JSX.Element {
       >
         임시공지
       </a>
+      <a
+        className="text-violet-800 underline"
+        href="https://cafe.naver.com/steamindiegame/13461972"
+      >
+        임시공지2
+      </a>
       <Image src={wowHardcoreLogo} alt="" />
       <ProfileArea />
     </main>
