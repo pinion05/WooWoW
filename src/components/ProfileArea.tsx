@@ -13,6 +13,9 @@ export default function ProfileArea(): JSX.Element {
   const [characterNames, setCharacterNames] = useState<string[]>([
     `줄건줘`,
     `응안줘`,
+    `지존아이네`,
+    `드워프주르르`,
+    `부가땅`,
   ]);
 
   const [characterDatas, setChatacterDatas] = useState<WoWCharacterProfile[]>();
@@ -33,7 +36,7 @@ export default function ProfileArea(): JSX.Element {
         );
         return respons.data;
       } catch (error) {
-        console.log(`캐릭터를 찾을 수 없습니다.`);
+        alert(`${name} 캐릭터를 찾을 수 없습니다.`);
         setCharacterNames((pre) => pre.filter((ele) => ele !== name));
       }
     });

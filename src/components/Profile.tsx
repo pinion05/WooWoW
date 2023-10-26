@@ -59,7 +59,7 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
   return (
     <div>
       {/* <div
-        className="w-[30px] h-[30px] absolute translate-x-[80px] translate-y-[10px] bg-red-700 rounded-tr-[10px] text-amber-400 flex justify-center items-center focus pointer-events-none z-100"
+        className="w-[30px] h-[30px] absolute translate-x-[80px] translate-y-[10px] bg-red-700 rounded-tr-[10px] text-amber-400 flex justify-center items-center focus pointer-events-none z-100 rounded-bl-[10px ]"
         onClick={() => {
           console.log("닫기");
         }}
@@ -134,24 +134,8 @@ const ProfileContainer = styled.div`
   margin: 0;
 `;
 
-const PlayerImg = styled.img`
-  height: 100px;
-  width: 100px;
-  border-radius: 10px 10px 0px 0px;
-`;
-
-const Tomb = styled.img`
-  height: 100px;
-  position: absolute;
-`;
-
 const PlayerName = styled.span`
   font-size: 14px;
-`;
-
-const JobIcon = styled.img`
-  height: 30px;
-  border-radius: 0px 0px 0px 10px;
 `;
 
 const Info = styled.div`

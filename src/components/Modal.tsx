@@ -47,7 +47,7 @@ export default function Modal({
     if (mount) {
       return;
     }
-    console.log(info.name + "마운트됨");
+    // console.log(info.name + "마운트됨");
     clickContainer();
     mount = true;
   }, []);
@@ -65,10 +65,6 @@ export default function Modal({
   }
 
   useEffect(() => {
-    console.log(
-      "🚀 ~ file: Modal.tsx:81 ~ useEffect ~ equippedItems:",
-      equippedItems
-    );
     equippedItems?.forEach(
       (item: Item) => {
         switch (item.slot.name) {

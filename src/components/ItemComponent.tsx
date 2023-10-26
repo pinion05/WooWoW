@@ -2,13 +2,10 @@
 import Item from "@/model/Item";
 import itemOutline from "../img/default.png";
 import { styled } from "styled-components";
-import { useEffect, useRef, useState } from "react";
-import axios from "axios";
+import { useRef, useState } from "react";
 import React from "react";
-import slotempty from "../img/slotempty.png";
 import Tooltip from "./Tooltip";
 import ItemDiscription from "./ItemDiscriptcion";
-import { dir } from "console";
 
 interface ItemComponentProps {
   item: Item | undefined;
@@ -20,21 +17,12 @@ export default function IconComponent({
   dir,
 }: ItemComponentProps): JSX.Element {
   const [isMouseEnter, setMouseEnter] = useState<boolean>();
-  const [itemImgUrl, setItemUrl] = useState<string>();
   const containerRef = useRef<any>();
-
-  useEffect(() => {
-    // console.log("아이템컴포 마운트");
-    if (item?.media?.id) {
-      // console.log("아이템아이디 존재");
-    } else {
-      console.log("미디어 존재하지않음");
-    }
-  }, [item]);
 
   function ContainerMouseenter() {
     setMouseEnter(true);
   }
+
   function ContainerMouseLeave() {
     setMouseEnter(false);
   }
@@ -66,28 +54,17 @@ export default function IconComponent({
   );
 }
 
-interface ContainerProps {
-  quality: `일반` | `고급` | `희귀` | `영웅` | undefined;
-}
-const ItemName = styled.span<ContainerProps>`
-  color: ${(props) => q_color(props.quality)};
-  font-size: small;
+const Container = styled.div<Quality>`
+  width: 50px;
+  height: 50px;
+  background-color: #282828;
+  outline: 2px solid ${(props) => q_color(props.quality)};
+  border-radius: 9px;
 `;
 
-const TooltipContainer = styled.div<ContainerProps>`
-  display: flex;
-  position: relative;
-  width: 300px;
-  height: auto;
-  background-color: #080d21;
-  left: 60px;
-  top: -120px;
-  outline: 2px solid ${(props) => q_color(props.quality)};
-  border-radius: 5px;
-  flex-flow: column;
-  padding: 5px;
-  z-index: 100;
-`;
+interface Quality {
+  quality: `일반` | `고급` | `희귀` | `영웅` | undefined;
+}
 
 function q_color(quality: string | undefined) {
   switch (quality) {
@@ -108,11 +85,3 @@ function q_color(quality: string | undefined) {
       break;
   }
 }
-
-const Container = styled.div<ContainerProps>`
-  width: 50px;
-  height: 50px;
-  background-color: #282828;
-  outline: 2px solid ${(props) => q_color(props.quality)};
-  border-radius: 9px;
-`;
