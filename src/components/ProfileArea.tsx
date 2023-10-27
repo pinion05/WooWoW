@@ -13,7 +13,6 @@ export default function ProfileArea(): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
   const [characterNames, setCharacterNames] = useState<string[]>([
     `줄건줘`,
-    `응안줘`,
     `지존아이네`,
     `드워프주르르`,
     `부가땅`,
