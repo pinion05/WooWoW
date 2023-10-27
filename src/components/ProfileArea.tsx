@@ -8,7 +8,6 @@ import Character from "@/model/Characer";
 import { json } from "stream/consumers";
 import { Spacing } from "./styledComponents";
 import Loading from "./Loading";
-import { response } from "express";
 
 export default function ProfileArea(): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
