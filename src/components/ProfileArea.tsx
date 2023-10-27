@@ -8,6 +8,7 @@ import Character from "@/model/Characer";
 import { json } from "stream/consumers";
 import { Spacing } from "./styledComponents";
 import Loading from "./Loading";
+import { response } from "express";
 
 export default function ProfileArea(): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -33,10 +34,14 @@ export default function ProfileArea(): JSX.Element {
   async function featchCharacterDatas(names: string[]) {
     const responseArray = names.map(async (name: string, idx) => {
       try {
-        const respons = await axios.get(
+        const response = await axios.get(
           `/api/character?charactername=${encodeURIComponent(name)}`
         );
-        return respons.data;
+        if (response.status === 501) {
+          alert(`네트워크에러발생`);
+          return;
+        }
+        return response.data;
       } catch (error) {
         alert(`${name} 캐릭터를 찾을 수 없습니다.`);
         setCharacterNames((pre) => pre.filter((ele) => ele !== name));

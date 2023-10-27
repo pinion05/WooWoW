@@ -1,39 +1,27 @@
 import getToken from "../../apiFuntions/getAccessToken";
-import NodeCache, { Key } from "node-cache";
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
-import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 
-const redis = require("redis");
-const redisClient = redis.createClient({
-  url: `redis://${process.env.REDIS_USERNAME}:${process.env.REDIS_PASSWORD}@${process.env.REDIS_HOST}:${process.env.REDIS_PORT}/0`,
-  legacyMode: true,
+const Redis = require("ioredis");
+
+const redis = new Redis({
+  port: process.env.REDIS_PORT, // Redis port
+  host: process.env.REDIS_HOST, // Redis host
+  username: process.env.REDIS_USERNAME, // needs Redis >= 6
+  password: process.env.REDIS_PASSWORD,
+  db: 0, // Defaults to 0
 });
-redisClient.on("connect", () => {
-  console.info("Redis connected!");
-});
-redisClient.on("error", (err: any) => {
-  console.error("Redis Client Error", err);
-});
-redisClient.connect().then(); // redis v4 연결 (비동기)
-const redisCli = redisClient.v4;
-const cache = new NodeCache({ stdTTL: 60 * 1 });
+
 // prettier-ignore
-//!     ===========================================  endpoint =============================================================
+//!     ===========================================  endpoint
 export default async function handler(req: NextApiRequest,res: NextApiResponse) {
   const accessToken = await getToken();
-  const localCache = cache.get(`local_guildCount`);
-  const redisCache = await redisCli.get('Redis_guildCount');
-
-if (localCache) {
-  res.status(200).send(localCache)
-  return
-}
-
+  if (!accessToken) {
+    console.log(`accessToken 을 찾을 수 없습니다.`);
+  }
+  const redisCache = JSON.parse(await redis.get(`Redis_guild`))
 if (redisCache) {
-  console.log('로컬 guildCount 캐시없음');
   res.status(200).send(redisCache);
-  cache.set('local_guildCount',redisCache)
   return
 }
   console.log(`❌ Redis 길드인원 캐시없음`);
@@ -52,9 +40,7 @@ if (redisCache) {
       res.status(500).json("error");
       return;
     }
-    cache.set(`local_guildCount`, response.data.member_count);
-    redisCli.set(`Redis_guildCount`,response.data.member_count)
-    redisCli.expire('Redis_guildCount', 30); // 3600초 후에 username 키 삭제
+    await redis.set(`Redis_guild`, JSON.stringify(response.data.member_count), 'EX', 30);
     res.status(200).json(response.data.member_count);
     return;
   } catch (error) {
@@ -62,5 +48,4 @@ if (redisCache) {
     res.status(500).json(error);
     return;
   }
-
 }
