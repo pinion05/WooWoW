@@ -5,7 +5,7 @@ export default function WorldBuff(): JSX.Element {
   const [buffData, setBuffData] = useState();
   async function getWorldbuff() {
     try {
-      const response = await axios.get("/api/worldbuff");
+      const response = await axios.get("https://woowow.xyz/api/worldbuff");
       setBuffData(response.data);
     } catch (error) {}
   }
