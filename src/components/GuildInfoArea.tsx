@@ -18,7 +18,7 @@ export default function GuildInfoArea(): JSX.Element {
 
   async function featchGuildInfo() {
     try {
-      const response = await axios.get(`http://localhost:5000/api/guild`);
+      const response = await axios.get(`https://woowow.xyz/api/guild`);
       console.log(response);
       setGuildmemberCount(response.data);
     } catch (error) {}
