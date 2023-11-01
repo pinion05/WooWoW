@@ -22,9 +22,13 @@ export interface CharacterProps {
   closeFunction?: () => void;
 }
 
+const koongchan =
+  "https://cafeptthumb-phinf.pstatic.net/MjAyMzA5MjVfMjA2/MDAxNjk1NjM2NDUzOTY5.5wHja-30rsUVDB3X0oLbDOdQcyw2GHvQ66SW7JWU0tog.rL5zQVM7AbH-SXAyZuAGiuEnP-AoELMAgPDJZwJSyYMg.PNG/%EB%B9%84%EC%B1%A4%EC%BF%B5%EC%95%BC.png?type=w1600";
+
 const Profile = ({ info }: CharacterProps): JSX.Element => {
   //
   const [isModalon, setIsModalOn] = useState<boolean>(false);
+
   //
   function classIcon(className: string) {
     switch (className) {
@@ -76,6 +80,8 @@ const Profile = ({ info }: CharacterProps): JSX.Element => {
           <Image
             className="h-[100px] rounded-tl-[10px] rounded-tr-[10px]"
             src={wak}
+            width={100}
+            height={100}
             alt=""
           />
           {info.is_ghost && (

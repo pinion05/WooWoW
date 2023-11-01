@@ -7,6 +7,7 @@ export default function Footer(): JSX.Element {
         </a>
         <p>https://github.com/pinion05</p>
         <p>shalompmc0505@naver.com</p>
+        <p>Copyright 2023~ ALL Rights Reserved.</p>
       </p>
     </>
   );

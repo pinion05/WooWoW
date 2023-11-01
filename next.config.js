@@ -11,7 +11,7 @@ module.exports = {
   //   },
   // },
   images: {
-    domains: ["i.namu.wiki"],
+    domains: ["i.namu.wiki", "cafeptthumb-phinf.pstatic.net"],
   },
 };
 // module.exports = {

@@ -12,11 +12,14 @@ import Link from "next/link";
 import Statistics from "@/model/Statistics";
 import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 import Loading from "./Loading";
+import { SERVER_URL } from "../../serverurl";
 
 export default function Modal({
   info,
   closeFunction,
 }: CharacterProps): JSX.Element {
+  // const SERVER_URL = "http://localhost:3000";
+
   //
   const modalRef = useRef<HTMLDialogElement>(null);
   const [characterData, setcharacterData] =
@@ -26,7 +29,7 @@ export default function Modal({
 
   async function featchCharacterData(characterName: string) {
     try {
-      const response = await axios.get(`https://woowow.xyz/api/characterinfo`, {
+      const response = await axios.get(`${SERVER_URL}/api/characterinfo`, {
         params: { charactername: characterName },
       });
       setcharacterData(response.data);

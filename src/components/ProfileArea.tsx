@@ -8,6 +8,7 @@ import Character from "@/model/Characer";
 import { json } from "stream/consumers";
 import { Spacing } from "./styledComponents";
 import Loading from "./Loading";
+import { SERVER_URL } from "../../serverurl";
 
 export default function ProfileArea(): JSX.Element {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -33,7 +34,7 @@ export default function ProfileArea(): JSX.Element {
     const responseArray = names.map(async (name: string, idx) => {
       try {
         const response = await axios.get(
-          `https://woowow.xyz/api/character?charactername=${encodeURIComponent(
+          `${SERVER_URL}/api/character?charactername=${encodeURIComponent(
             name
           )}`
         );

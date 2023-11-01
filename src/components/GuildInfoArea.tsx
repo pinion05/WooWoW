@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { SERVER_URL } from "../../serverurl";
 
 export default function GuildInfoArea(): JSX.Element {
   const [guildmemberCount, setGuildmemberCount] = useState<number>(0);
@@ -18,7 +19,7 @@ export default function GuildInfoArea(): JSX.Element {
 
   async function featchGuildInfo() {
     try {
-      const response = await axios.get(`https://woowow.xyz/api/guild`);
+      const response = await axios.get(`${SERVER_URL}/api/guild`);
       console.log(response);
       setGuildmemberCount(response.data);
     } catch (error) {}
