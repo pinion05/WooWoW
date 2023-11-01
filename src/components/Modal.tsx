@@ -240,7 +240,7 @@ export default function Modal({
                 className="w-[100%] h-[51%] bg-neutral-900 ring-gray-500 ring-[2px] rounded-lg flex justify-end"
               >
                 <p className="text-gray-50 absolute left-[100px] text-2xl top-[160px] max-sm:w-[100%] max-sm:left-[100px] max-sm:text-xs">
-                  WOOWOW_0.1.2
+                  WOOWOW_0.2.2
                 </p>
 
                 <div className="flex flex-col">
