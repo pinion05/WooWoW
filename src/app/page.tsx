@@ -7,12 +7,14 @@ import { Spacing } from "@/components/styledComponents";
 import Footer from "@/components/Footer";
 import WorldBuff from "@/components/WorldBuff";
 import Link from "next/link";
+import GameInfos from "./GameInfos";
 
 export default function Home(): JSX.Element {
   return (
     <main className="min-w-full flex flex-col items-center justify-center p-24">
-      <GuildInfoArea />
-      <WorldBuff />
+      <div className="flex w-[100vw]">
+        <GameInfos />
+      </div>
       <Image src={wowHardcoreLogo} alt="" />
       <ProfileArea />
     </main>

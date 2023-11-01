@@ -19,11 +19,10 @@ import Modal from "./Modal";
 
 export interface CharacterProps {
   info: WoWCharacterProfile;
-  playerName?: string;
   closeFunction?: () => void;
 }
 
-const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
+const Profile = ({ info }: CharacterProps): JSX.Element => {
   //
   const [isModalon, setIsModalOn] = useState<boolean>(false);
   //
@@ -98,13 +97,7 @@ const Profile = ({ info, playerName }: CharacterProps): JSX.Element => {
           </span>
         </Info>
       </Container>
-      {isModalon && (
-        <Modal
-          closeFunction={clickcloseModal}
-          info={info}
-          playerName={playerName}
-        />
-      )}
+      {isModalon && <Modal closeFunction={clickcloseModal} info={info} />}
     </div>
   );
 };

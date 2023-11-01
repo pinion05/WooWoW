@@ -21,19 +21,21 @@ export default function ProfileArea(): JSX.Element {
 
   const [characterDatas, setChatacterDatas] = useState<WoWCharacterProfile[]>();
 
-  let mounted = false;
+  // let mounted = false;
 
   useEffect(() => {
-    if (mounted) return;
+    // if (mounted) return;
     featchCharacterDatas(characterNames);
-    mounted = true;
+    // mounted = true;
   }, []);
 
   async function featchCharacterDatas(names: string[]) {
     const responseArray = names.map(async (name: string, idx) => {
       try {
         const response = await axios.get(
-          `/api/character?charactername=${encodeURIComponent(name)}`
+          `https://woowow.xyz/api/character?charactername=${encodeURIComponent(
+            name
+          )}`
         );
         if (response.status === 501) {
           alert(`네트워크에러발생`);
