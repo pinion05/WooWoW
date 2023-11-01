@@ -11,7 +11,7 @@ import GameInfos from "./GameInfos";
 
 export default function Home(): JSX.Element {
   return (
-    <main className="min-w-full flex flex-col items-center justify-center p-24">
+    <main className="min-w-full flex flex-col items-center justify-center">
       <div className="flex w-[100vw]">
         <GameInfos />
       </div>
