@@ -15,8 +15,8 @@ export default function WorldBuff(): JSX.Element {
   });
   return (
     <div className="">
-      {buffData && <p>{buffData}</p>}
-      {!buffData && <p className="text-2xl">월드버프정보 없음</p>}
+      {buffData && <p className="text-white">{buffData}</p>}
+      {!buffData && <p className="text-2xl text-white">월드버프정보 없음</p>}
     </div>
   );
 }

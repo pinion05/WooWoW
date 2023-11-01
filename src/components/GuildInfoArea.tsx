@@ -25,10 +25,10 @@ export default function GuildInfoArea(): JSX.Element {
   }
 
   return (
-    <div className="flex absolute left-2 top-3">
+    <div className="flex ">
       <div className=" relative z-10">
-        <p>왁타버스 현재인원</p>
-        <p>1000/{guildmemberCount}명</p>
+        <p className="text-white">왁타버스 현재인원</p>
+        <p className="text-white">1000/{guildmemberCount}명</p>
         <br />
         <p className="text-red-600">1분 이상 딜레이가 있을 수 있습니다</p>
         <p className="text-red-600"></p>
