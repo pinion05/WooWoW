@@ -19,9 +19,11 @@ export default function WorldbuffInput() {
 
   async function onclick() {
     if (adminkeySaveRef.current?.checked && adminkeyRef.current) {
-      localStorage.setItem("adminkey", adminkeyRef.current?.value);
+      typeof window !== "undefined"
+        ? localStorage.setItem("adminkey", adminkeyRef.current?.value)
+        : "";
     } else {
-      localStorage.removeItem("adminkey");
+      typeof window !== "undefined" ? localStorage.removeItem("adminkey") : "";
     }
 
     if (adminkeyRef.current && buffDataRef.current) {
@@ -49,7 +51,11 @@ export default function WorldbuffInput() {
     <div className="flex justify-center items-center h-[80vh]">
       <div className="flex flex-col w-[1000px] h-[auto] p-[20px] rounded-lg bg-slate-400 items-start">
         <input
-          defaultValue={localStorage.getItem("adminkey") ?? ""}
+          defaultValue={
+            typeof window !== "undefined"
+              ? localStorage.getItem("adminkey") ?? ""
+              : ""
+          }
           type="password"
           className="text-lg p-[10px] rounded-md w-[100%]"
           placeholder="admin key"

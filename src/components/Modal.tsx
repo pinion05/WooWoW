@@ -18,8 +18,6 @@ export default function Modal({
   info,
   closeFunction,
 }: CharacterProps): JSX.Element {
-  // const SERVER_URL = "http://localhost:3000";
-
   //
   const modalRef = useRef<HTMLDialogElement>(null);
   const [characterData, setcharacterData] =
