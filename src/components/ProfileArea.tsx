@@ -125,9 +125,10 @@ export default function ProfileArea(): JSX.Element {
       {characterDatas &&
         groupByConsecutiveNumbers(sortLevel(characterDatas)).map(
           (sameLevelcharcters: WoWCharacterProfile[], idx) => (
-            <>
-              <LevelStep characterDatas={sameLevelcharcters}></LevelStep>
-            </>
+            <LevelStep
+              characterDatas={sameLevelcharcters}
+              key={idx}
+            ></LevelStep>
           )
         )}
     </>

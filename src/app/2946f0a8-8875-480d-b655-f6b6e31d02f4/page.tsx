@@ -1,9 +1,9 @@
-import WorldbuffInput from "@/components/worldbuffInput";
+import WorldbuffForm from "@/components/WorldbuffForm";
 
 export default function Page() {
   return (
     <div>
-      <WorldbuffInput />
+      <WorldbuffForm />
     </div>
   );
 }

@@ -227,10 +227,10 @@ export default function Modal({
               {[head, neak, shoulders, back, chest, under, out, wrist].map(
                 (slot, idx) => {
                   return (
-                    <>
-                      <IconComponent item={slot} key={idx} dir="right" />
+                    <div key={idx}>
+                      <IconComponent item={slot} dir="right" />
                       <Spacing height={5} />
-                    </>
+                    </div>
                   );
                 }
               )}
@@ -305,9 +305,9 @@ export default function Modal({
                       name: "방어도",
                       effective: stasticsData?.armor.effective,
                     },
-                  ].map((stat) => {
+                  ].map((stat, idx) => {
                     return (
-                      <>
+                      <div key={idx}>
                         <div className="flex justify-between m-[0]">
                           <p className="text-sm text-yellow-500 max-sm:text-xs">
                             {stat.name}
@@ -316,7 +316,7 @@ export default function Modal({
                             {stat.effective}
                           </p>
                         </div>
-                      </>
+                      </div>
                     );
                   })}
                   {""}
@@ -326,9 +326,9 @@ export default function Modal({
                   id="캐릭터 코어스텟"
                   className="w-[50%] h-[auto] bg-stone-950 flex flex-col justify-start ring-zinc-400 ring-2 rounded-lg p-[2px]"
                 >
-                  {rstats.map((stat) => {
+                  {rstats.map((stat, idx) => {
                     return (
-                      <>
+                      <div key={idx}>
                         <div className="flex justify-between m-[0]">
                           <p className="text-sm text-yellow-500 max-sm:text-xs">
                             {stat.name}{" "}
@@ -337,7 +337,7 @@ export default function Modal({
                             {stat.effective}
                           </p>
                         </div>
-                      </>
+                      </div>
                     );
                   })}
                   {""}
@@ -347,11 +347,11 @@ export default function Modal({
               <div id="하단아이템배열" className="flex justify-center">
                 {[mainHand, offHand, rangedWeapon].map((slot, idx) => {
                   return (
-                    <>
+                    <div key={idx}>
                       <Spacing width={3} />
-                      <IconComponent item={slot} key={idx} dir="left" />
+                      <IconComponent item={slot} dir="left" />
                       <Spacing width={3} />
-                    </>
+                    </div>
                   );
                 })}
               </div>
@@ -368,10 +368,10 @@ export default function Modal({
                 trinket2,
               ].map((slot, idx) => {
                 return (
-                  <>
-                    <IconComponent item={slot} key={idx} dir="left" />
+                  <div key={idx}>
+                    <IconComponent item={slot} dir="left" />
                     <Spacing height={5} />
-                  </>
+                  </div>
                 );
               })}
             </ItemList>
