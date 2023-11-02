@@ -5,8 +5,8 @@ import { RefObject, useEffect, useRef, useState } from "react";
 import { SERVER_URL } from "../../serverurl";
 import { Spacing } from "./styledComponents";
 import Link from "next/link";
-import WorldbuffInput from "./WorldbuffInput";
 import GameInfos from "@/app/GameInfos";
+import WorldbuffInput from "./WorldbuffInput";
 
 export default function WorldbuffForm(): JSX.Element {
   const [buffDatas, setBuffDatas] = useState<any[]>([]);
