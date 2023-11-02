@@ -2,17 +2,17 @@ import { Dispatch, RefObject, SetStateAction, useRef, useState } from "react";
 import { Spacing } from "./styledComponents";
 import { log } from "console";
 
-interface WorldbuffInputProps {
+interface WorldbuffInputComponentProps {
   arrayControl: Dispatch<SetStateAction<any[]>>;
   id: number;
   buffDatasControl: Dispatch<SetStateAction<any[]>>;
 }
 
-export default function WorldbuffInput({
+export default function WorldbuffInputComponent({
   arrayControl,
   id,
   buffDatasControl,
-}: WorldbuffInputProps): JSX.Element {
+}: WorldbuffInputComponentProps): JSX.Element {
   const adminkeyRef: RefObject<HTMLInputElement> =
     useRef<HTMLInputElement>(null);
   const buffDataRef: RefObject<HTMLInputElement> =

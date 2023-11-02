@@ -5,8 +5,8 @@ import { RefObject, useEffect, useRef, useState } from "react";
 import { SERVER_URL } from "../../serverurl";
 import { Spacing } from "./styledComponents";
 import Link from "next/link";
-import GameInfos from "@/app/GameInfos";
-import WorldbuffInput from "./WorldbuffInput";
+import GameInfos from "@/components/GameInfos";
+import WorldbuffInputComponent from "./WorldbuffInputComponent";
 
 export default function WorldbuffForm(): JSX.Element {
   const [buffDatas, setBuffDatas] = useState<any[]>([]);
@@ -63,7 +63,7 @@ export default function WorldbuffForm(): JSX.Element {
         <Spacing height={15} />
         {array.map((_, idx) => (
           <div key={idx} className="w-[100%]">
-            <WorldbuffInput
+            <WorldbuffInputComponent
               arrayControl={setArray}
               id={idx}
               buffDatasControl={setBuffDatas}
