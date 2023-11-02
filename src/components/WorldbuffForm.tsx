@@ -30,13 +30,15 @@ export default function WorldbuffForm(): JSX.Element {
       alert("정보를 입력하세요");
       return;
     }
-    console.log();
-
-    await axios.post(`${SERVER_URL}/api/worldbuff`, {
-      adminKey: adminkeyRef.current?.value,
-      buffData: JSON.stringify(buffDatas),
-    });
-    location.replace("/2946f0a8-8875-480d-b655-f6b6e31d02f4");
+    try {
+      const response = await axios.post(`${SERVER_URL}/api/worldbuff`, {
+        adminKey: adminkeyRef.current?.value,
+        buffData: JSON.stringify(buffDatas),
+      });
+      location.replace("/2946f0a8-8875-480d-b655-f6b6e31d02f4");
+    } catch (error) {
+      alert(`키가 동일하지 않습니다.`);
+    }
   }
   return (
     <div className="flex flex-col justify-center items-center h-[100vh]">
