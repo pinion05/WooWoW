@@ -1,10 +1,9 @@
-import Item from "@/model/Item";
 import { styled } from "styled-components";
 
 interface TooltipProps {
   ChildComponent: JSX.Element;
-  dir: "right" | "left" | "top" | "bottom";
-  quality: "일반" | "고급" | "희귀" | "영웅" | undefined;
+  dir: Dir;
+  quality: Quality ;
 }
 
 export default function Tooltip({
@@ -25,31 +24,37 @@ export default function Tooltip({
   );
 }
 
-function q_color(quality: string | undefined) {
-  switch (quality) {
-    case "일반":
-      return "white";
-      break;
-    case "고급":
-      return "#00ff00";
-      break;
-    case "희귀":
-      return "#0070dd";
-      break;
-    case "영웅":
-      return "#9535e1";
-      break;
-    default:
-      return "gray";
-      break;
+function q_color(quality: Quality ) {
+  const returnQuality = {
+    [Quality.COMMON]: "white",
+    [Quality.UNIQUE]: "#00ff00",
+    [Quality.RARE]: "#0070dd",
+    [Quality.EPIC]: "#9535e1",
   }
+  if (!quality) return "gray"
+  else return returnQuality[quality]
 }
+
+enum Quality {
+  COMMON = "일반",
+  UNIQUE = "고급",
+  RARE = "희귀",
+  EPIC = "영웅"
+}
+
+enum Dir {
+  RIGHT = "right",
+  LEFT = "left",
+  TOP= "top",
+  BOTTOM= "bottom",
+}
+
 interface TooltipContainer extends QualityProps {
-  dir: "right" | "left" | "top" | "bottom";
+  dir: Dir;
 }
 
 interface QualityProps {
-  quality: `일반` | `고급` | `희귀` | `영웅` | undefined;
+  quality: Quality;
 }
 
 const TooltipContainer = styled.div<TooltipContainer>`
@@ -59,7 +64,6 @@ const TooltipContainer = styled.div<TooltipContainer>`
   height: auto;
   background-color: #080d21;
   left: 60px;
-
   top: -120px;
   outline: 2px solid ${(props) => q_color(props.quality)};
   border-radius: 5px;
@@ -68,6 +72,6 @@ const TooltipContainer = styled.div<TooltipContainer>`
   z-index: 100;
   @media (max-width: 768px) {
     width: 150px;
-    left: ${(props) => (props.dir === "left" ? "-160px" : "60px")};
+    left: ${(props) => (props.dir === Dir.LEFT ? "-160px" : "60px")};
   }
 `;
