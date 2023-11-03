@@ -18,14 +18,14 @@ import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 import Modal from "./Modal";
 
 export interface CharacterProps {
-  info: WoWCharacterProfile;
+  characterData: WoWCharacterProfile;
   closeFunction?: () => void;
 }
 
 const koongchan =
   "https://cafeptthumb-phinf.pstatic.net/MjAyMzA5MjVfMjA2/MDAxNjk1NjM2NDUzOTY5.5wHja-30rsUVDB3X0oLbDOdQcyw2GHvQ66SW7JWU0tog.rL5zQVM7AbH-SXAyZuAGiuEnP-AoELMAgPDJZwJSyYMg.PNG/%EB%B9%84%EC%B1%A4%EC%BF%B5%EC%95%BC.png?type=w1600";
 
-const Profile = ({ info }: CharacterProps): JSX.Element => {
+const Profile = ({ characterData }: CharacterProps): JSX.Element => {
   //
   const [isModalon, setIsModalOn] = useState<boolean>(false);
 
@@ -73,7 +73,7 @@ const Profile = ({ info }: CharacterProps): JSX.Element => {
         onClick={(e) => {
           clickContainer();
         }}
-        isLive={!info.is_ghost}
+        isghost={characterData.is_ghost.toString() as "true" | "false"}
       >
         <ProfileContainer>
           {/* <PlayerImg src={wak} /> */}
@@ -84,32 +84,34 @@ const Profile = ({ info }: CharacterProps): JSX.Element => {
             height={100}
             alt=""
           />
-          {info.is_ghost && (
+          {characterData.is_ghost && (
             <Image className="h-[100px] w-[100px] absolute" src={tomb} alt="" />
           )}
 
-          <PlayerName className="text-black">{info.name}</PlayerName>
+          <PlayerName className="text-black">{characterData.name}</PlayerName>
         </ProfileContainer>
         <Info>
           <Image
             className="rounded-bl-[10px] "
-            src={classIcon(info.character_class.name)}
+            src={classIcon(characterData.character_class.name)}
             width={30}
             height={30}
             alt=""
           />
           <span className="pointer-events-none text-black h-[100%] max-sm:text-[23px]">
-            {info.level}레벨
+            {characterData.level}레벨
           </span>
         </Info>
       </Container>
-      {isModalon && <Modal closeFunction={clickcloseModal} info={info} />}
+      {isModalon && (
+        <Modal closeFunction={clickcloseModal} characterData={characterData} />
+      )}
     </div>
   );
 };
 
 interface ContainerProps {
-  isLive: boolean;
+  isghost: "true" | "false";
 }
 
 const Container = styled.div<ContainerProps>`
@@ -121,7 +123,7 @@ const Container = styled.div<ContainerProps>`
   width: 100px;
   height: auto;
   margin: 10px;
-  background-color: ${(props) => (props.isLive ? `white` : "gray")};
+  background-color: ${(props) => (props.isghost === "true" ? `gray` : "white")};
   border-radius: 10px;
   box-shadow: 0px 00px 10px 0px #575757;
 `;

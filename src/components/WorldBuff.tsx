@@ -18,7 +18,7 @@ export default function WorldBuff(): JSX.Element {
     <div
       className=""
       onClick={() => {
-        console.log(buffData);
+        // console.log(buffData);
       }}
     >
       {buffData &&

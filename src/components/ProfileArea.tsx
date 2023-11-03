@@ -6,7 +6,7 @@ import WoWCharacterProfile from "@/model/WoWCharacterProfile ";
 import LevelStep from "./LevelStep.client";
 import Character from "@/model/Characer";
 import { json } from "stream/consumers";
-import { Spacing } from "./styledComponents";
+import { Spacing } from "../styledComponents";
 import Loading from "./Loading";
 import { SERVER_URL } from "../../serverurl";
 
@@ -22,21 +22,59 @@ export default function ProfileArea(): JSX.Element {
 
   const [characterDatas, setChatacterDatas] = useState<WoWCharacterProfile[]>();
 
-  // let mounted = false;
+  let mounted = false;
 
   useEffect(() => {
-    // if (mounted) return;
     featchCharacterDatas(characterNames);
-    // mounted = true;
+
+    if (mounted) return;
+    mounted = true;
+    console.log(`
+          ME SSIYAM MA!
+
+    ~.                                         
+    ;:;!-                ;!;                    
+   ,; ..;!.            ;!~.;~                   
+   !-,~;:,!-         .!:.~-,!                   
+   !.~,,-!-;,..,,,..~!-,!:~.!.                  
+   ;.~,,,,~.,,,,.,,,-..;,,~,;-                  
+   !.~,,,,.....  .,....,-,~,:~                  
+   :-,,,...~~.,  ........,,.;~                  
+    ;-....~@@. , .~@#,......!-                  
+    ;......=*;@@#!~##,.....,;                   
+    -.....,:  $#$,~:.......:.                   
+   ~......    .;    .......-~                   
+   *.,...  ,-:==!,.- .......;                   
+   :...      :--~~,    .....;.                  
+   ;          ..           ,;                   
+   !                       -,          ~!,;     
+   :~                     ,;!!;,:!!!*!!,  !     
+    !                   .~-....,-,.....,:!-     
+    -~                    ............... !.    
+     ;                   ................. ;.   
+     ;                   ,................. !   
+     ;                   ...................--  
+     -.                  ................... ;  
+     ,-                  ................... !  
+     .;. -              .................... ~  
+      ~-  ,,., ,        ................... ~   
+       :,.              ................... :   
+       ,~..            .......,   .........:    
+        ;....          .......,,,,-,.....,,-    
+        ,:.....,,,,,,,,......,,,,-;;,.... !     
+         ;,....-.,,,-~:,,,..;!!!;; ;-.,. !      
+         ~, .  :      *    :!!!;=  !.   :       
+         ;    .:     - , . !!;~;- - ,   !       
+         ,~,-,,.      ~~--,!!;-:  .~~-,,,       
+    `);
   }, []);
 
   async function featchCharacterDatas(names: string[]) {
     const responseArray = names.map(async (name: string, idx) => {
       try {
         const response = await axios.get(
-          `${SERVER_URL}/api/character?charactername=${encodeURIComponent(
-            name
-          )}`
+          // prettier-ignore
+          `${SERVER_URL}/api/character?charactername=${encodeURIComponent(name)}`
         );
         if (response.status === 501) {
           alert(`네트워크에러발생`);
@@ -61,7 +99,7 @@ export default function ProfileArea(): JSX.Element {
   }
 
   useEffect(() => {
-    console.log(characterDatas);
+    // console.log(characterDatas);
   }, [characterDatas]);
   // prettier-ignore
 
@@ -94,9 +132,9 @@ export default function ProfileArea(): JSX.Element {
 
   function submitForm(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(inputRef.current?.value);
+    // console.log(inputRef.current?.value);
     if (inputRef.current?.value === "") {
-      console.log(`캐릭터 이름을 입력하세요`);
+      // console.log(`캐릭터 이름을 입력하세요`);
       return;
     }
     if (inputRef.current !== null) {
@@ -105,7 +143,7 @@ export default function ProfileArea(): JSX.Element {
   }
 
   useEffect(() => {
-    console.log(characterNames);
+    // console.log(characterNames);
     featchCharacterDatas(characterNames);
   }, [characterNames]);
 

@@ -1,5 +1,5 @@
 import { Dispatch, RefObject, SetStateAction, useRef, useState } from "react";
-import { Spacing } from "./styledComponents";
+import { Spacing } from "../styledComponents";
 import { log } from "console";
 
 interface WorldbuffInputComponentProps {
@@ -27,7 +27,7 @@ export default function WorldbuffInputComponent({
 
   function clickCheck() {
     const val = `${weekRef.current?.value} ${ampmRef.current?.value} ${timeRef.current?.value}  ${buffDataRef.current?.value}`;
-    console.log(val);
+    // console.log(val);
     buffDatasControl((pre) => {
       const newArray = [...pre];
       newArray[id] = val;
@@ -38,7 +38,7 @@ export default function WorldbuffInputComponent({
 
   function syncValue() {
     const val = `${weekRef.current?.value} ${ampmRef.current?.value} ${timeRef.current?.value}  ${buffDataRef.current?.value}`;
-    console.log(val);
+    // console.log(val);
     buffDatasControl((pre) => {
       const newArray = [...pre];
       newArray[id] = val;

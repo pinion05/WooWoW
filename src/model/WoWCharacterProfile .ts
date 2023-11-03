@@ -94,6 +94,5 @@ export default interface WoWCharacterProfile {
   equipment: { herf: Links; items: Item[] };
   appearance: Links;
   collections: Links;
-
   is_ghost: boolean;
 }

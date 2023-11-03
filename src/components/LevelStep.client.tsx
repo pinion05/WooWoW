@@ -12,8 +12,8 @@ export default function LevelStep({
 }: LevelStepProps): JSX.Element {
   return (
     <div className="outline-1 border-black-100 border-solid flex">
-      {characterDatas.map((userInfo, idx) => (
-        <Profile info={userInfo} key={idx} />
+      {characterDatas.map((characterData: WoWCharacterProfile, idx) => (
+        <Profile characterData={characterData} key={idx} />
       ))}
     </div>
   );

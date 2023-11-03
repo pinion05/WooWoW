@@ -11,7 +11,7 @@ export default function GuildInfoArea(): JSX.Element {
 
   useEffect(() => {
     if (!mounted) {
-      console.log("guild counter mounted");
+      // console.log("guild counter mounted");
       featchGuildInfo();
       mounted = true;
     }
@@ -20,7 +20,7 @@ export default function GuildInfoArea(): JSX.Element {
   async function featchGuildInfo() {
     try {
       const response = await axios.get(`${SERVER_URL}/api/guild`);
-      console.log(response);
+      // console.log(response);
       setGuildmemberCount(response.data);
     } catch (error) {}
   }

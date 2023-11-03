@@ -28,7 +28,7 @@ export default function IconComponent({
   }
 
   return (
-    <>
+    <div>
       <Container
         ref={containerRef}
         quality={item?.quality.name}
@@ -50,7 +50,7 @@ export default function IconComponent({
           ></Tooltip>
         )}
       </Container>
-    </>
+    </div>
   );
 }
 

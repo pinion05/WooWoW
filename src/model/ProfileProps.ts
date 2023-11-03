@@ -11,5 +11,5 @@ export interface ProfileProps {
     | "druid"
     | "knight";
   level: number;
-  isLive: boolean;
+  isghost: `true` | `false`;
 }
